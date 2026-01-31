@@ -7,7 +7,6 @@ func _ready():
 	sprite = get_node("Sprite2D")
 	hurtbox = get_node("HurtboxComponent")
 	sprite.visible = false
-	
 
 func attack(direction: Vector2, hit_layers: Array[int]) -> void:
 	sprite.visible = true
