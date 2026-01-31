@@ -9,7 +9,8 @@ func _ready():
 	if equipped_mask:
 		print("fuck")
 		equipped_mask.apply_to_controller(controller)
-		var instance = equipped_mask.special_attack
+		var instance = equipped_mask.special_attack.instantiate()
+		instance.name = "Special"
 		add_child(instance)
 		special = instance
 		setup_listeners() 
