@@ -5,13 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://du6cu4tylxi5q" path="res://src/assets/Terrain/Tileset/Tilemap_color1.png" id="2_8c177"]
 [ext_resource type="PackedScene" uid="uid://bbpjtemgku5av" path="res://src/scenes/components/player_controller.tscn" id="3_8c177"]
 [ext_resource type="Texture2D" uid="uid://cb87npg0knyh0" path="res://src/assets/Terrain/Resources/Wood/Trees/Tree1.png" id="3_awelt"]
-[ext_resource type="Script" uid="uid://c0tth6xkkuepy" path="res://src/scenes/level/tree_gen.gd" id="4_6omyi"]
+[ext_resource type="Script" path="res://src/scenes/level/tree_gen.gd" id="4_6omyi"]
 [ext_resource type="Texture2D" uid="uid://c2tos1omse0cv" path="res://icon.svg" id="4_srwyl"]
 [ext_resource type="PackedScene" uid="uid://dbheax1kx27dy" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
-[ext_resource type="PackedScene" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8c177"]
-size = Vector2(129, 129)
+[ext_resource type="PackedScene" uid="uid://dcdntvpo1nj4i" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_srwyl"]
 texture = ExtResource("2_8c177")
@@ -584,6 +581,9 @@ texture = ExtResource("3_awelt")
 [sub_resource type="TileSet" id="TileSet_msnoq"]
 sources/0 = SubResource("TileSetAtlasSource_pftw2")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8c177"]
+size = Vector2(129, 129)
+
 [node name="Main" type="Node2D" unique_id=64097844]
 script = ExtResource("1_0s8lj")
 
@@ -599,22 +599,22 @@ tile_set = SubResource("TileSet_msnoq")
 script = ExtResource("4_6omyi")
 
 [node name="CharacterBase" parent="." unique_id=2023623591 node_paths=PackedStringArray("controller") instance=ExtResource("2_2couc")]
-[node name="CharacterBase" parent="." unique_id=2023623591 node_paths=PackedStringArray("controller") groups=["player"] instance=ExtResource("2_2couc")]
-controller = NodePath("PlayerController")
+controller = NodePath("CharController")
 
-[node name="PlayerController" parent="CharacterBase" unique_id=823443357 instance=ExtResource("3_8c177")]
+[node name="CharController" parent="CharacterBase" unique_id=823443357 instance=ExtResource("3_8c177")]
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBase" unique_id=1562280727]
 texture = ExtResource("4_srwyl")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBase" unique_id=1035244976]
+
 [node name="Area2D" type="Area2D" parent="CharacterBase" unique_id=1955629904 groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBase/Area2D" unique_id=557803962]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_8c177")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1035244976]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=680524002]
 
 [node name="pickup" parent="." unique_id=539630175 instance=ExtResource("5_8c177")]
 position = Vector2(120, 0)

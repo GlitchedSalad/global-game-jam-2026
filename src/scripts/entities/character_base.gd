@@ -5,6 +5,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	controller = get_node("CharController")
 	controller.move.connect(_on_controller_move)
 	#controller.shield.connect(_on_controller_shield)
 
