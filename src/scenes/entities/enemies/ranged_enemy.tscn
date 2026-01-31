@@ -43,3 +43,4 @@ shape = SubResource("RectangleShape2D_5bmaf")
 shape = SubResource("CircleShape2D_1w4gr")
 
 [node name="DeathComponent" parent="." unique_id=1782825441 instance=ExtResource("8_13sxj")]
+xp = 20

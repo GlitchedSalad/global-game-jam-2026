@@ -3,7 +3,6 @@ extends Node2D
 
 var hit_layers: Array[int] = [1]
 var hurtbox: HurtboxComponent
-var effectTimer: Timer = Timer.new()
 var sprite: AnimatedSprite2D
 
 func _ready() -> void:

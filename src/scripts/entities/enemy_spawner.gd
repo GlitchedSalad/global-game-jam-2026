@@ -29,15 +29,17 @@ func _on_spawn_timer():
 		var target = players[randi_range(0, players.size() - 1)]
 
 		var new_enemy
-
-		match randi_range(0, 9):
-			0:
-				# Make him spawn when difficulty increaces
-				new_enemy = tank_enemy.instantiate()
-			1, 2, 3, 4, 5:
-				new_enemy = melee_enemy.instantiate()
-			6, 7, 8, 9:
-				new_enemy = ranged_enemy.instantiate()
+		
+		var enemy_spawn = randi_range(0, 99)
+		
+		if (enemy_spawn < 3):
+			new_enemy = tank_enemy.instantiate()
+		elif (enemy_spawn < 20):
+			new_enemy = exploding_enemy.instantiate()
+		elif (enemy_spawn < 50):
+			new_enemy = ranged_enemy.instantiate()
+		else:
+			new_enemy = melee_enemy.instantiate()
 		
 		#new_enemy.global_position = target.global_position + Vector2(spawn_radius, 0).rotated(randf_range(0, 2 * PI))
 		new_enemy.global_position = boundary_spawn(target.global_position)
