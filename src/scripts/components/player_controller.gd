@@ -1,7 +1,7 @@
 extends Node
 @export var player = 0
 
-@export var speed := 100
+@export var speed := 150
 var direction : Vector2
 
 signal move(value : Vector2)

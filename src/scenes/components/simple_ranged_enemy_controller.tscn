@@ -4,3 +4,5 @@
 
 [node name="SimpleRangedEnemyController" type="Node2D" unique_id=273893491]
 script = ExtResource("1_hcpa4")
+
+[node name="Timer" type="Timer" parent="." unique_id=2101929572]

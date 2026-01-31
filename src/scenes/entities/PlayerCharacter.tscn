@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://vecdkg8tcvyq" path="res://src/scenes/entities/projectiles/fireballProjectile.tscn" id="9_l51fx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hon5w"]
-radius = 89.050545
+radius = 52.153618
 
 [node name="PlayerCharacter" type="Node2D" unique_id=1184929539 node_paths=PackedStringArray("shield_node", "controller", "attack1")]
 script = ExtResource("1_848is")
@@ -42,3 +42,6 @@ ProjectileScene = ExtResource("9_l51fx")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=561554636]
 texture = ExtResource("8_hon5w")
+hframes = 2
+vframes = 2
+frame = 2
