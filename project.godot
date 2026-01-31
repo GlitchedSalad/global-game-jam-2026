@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalData="*uid://c6hojmayj4deq"
 Global="*uid://c6hojmayj4deq"
+GlobalData="*uid://c6hojmayj4deq"
 
 [display]
 
@@ -28,8 +28,9 @@ window/size/viewport_height=720
 [file_customization]
 
 folder_colors={
-"res://assets/": "red",
-"res://src/": "blue"
+"res://src/assets/": "yellow",
+"res://src/scenes/": "red",
+"res://src/scripts/": "teal"
 }
 
 [global_group]
@@ -205,4 +206,5 @@ p2_act4={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
