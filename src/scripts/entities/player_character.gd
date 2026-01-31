@@ -7,7 +7,6 @@ func _ready():
 	super._ready()
 	
 	if equipped_mask:
-		print("fuck")
 		equipped_mask.apply_to_controller(controller)
 		var instance = equipped_mask.special_attack.instantiate()
 		instance.name = "Special"
@@ -16,7 +15,7 @@ func _ready():
 		setup_listeners() 
 
 func add_xp(xp: int):
-	print("add me some xp")
+	Global.add_points(xp)
 
 func _on_died():
 	pass

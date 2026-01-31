@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bodfe3aoyinoc"]
+
+[ext_resource type="Script" uid="uid://cipry58cvyjrs" path="res://src/scripts/level/help_page.gd" id="1_61x2e"]
+
+[node name="HelpPage" type="Node2D" unique_id=1154343386]
+script = ExtResource("1_61x2e")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=948912594]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=2121546966]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=299840293]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "How to Play:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=507065294]
+layout_mode = 2
+text = "Use WASD to move around, use arrow keys to use abilities"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=2056428759]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=458398864]
+layout_mode = 2
+text = "Enemies"
+
+[node name="Melee" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=2044556059]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Melee" unique_id=894352945]
+layout_mode = 2
+text = "Melee enemies attack you on contact and block your movement"
+
+[node name="Ranged" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=795900263]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Ranged" unique_id=151873505]
+layout_mode = 2
+text = "Ranged enemies shoot you from range"
+
+[node name="Exploding" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=411133327]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Exploding" unique_id=901527905]
+layout_mode = 2
+text = "Exploding enemies explode when killed"
+
+[node name="Tank" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=1095204338]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Tank" unique_id=762818878]
+layout_mode = 2
+text = "Tank enemies have special attacks and a lot of health"
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=216712988]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
