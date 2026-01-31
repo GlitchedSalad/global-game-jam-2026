@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func set_current_health(amount : float) -> void:
 	current_health = amount
-	clampf(current_health, 0, max_health)
+	current_health = clampf(current_health, 0, max_health)
 	health_changed.emit()
 	
 func set_max_health(amount: float, full: bool) -> void:
@@ -24,11 +24,11 @@ func remove_health(amount : float) -> void:
 	current_health -= amount
 	if (current_health <= 0):
 		health_depleted.emit()
-	clampf(current_health, 0, max_health)
+	current_health = clampf(current_health, 0, max_health)
 	health_changed.emit()
 
 func add_health(amount : float) -> void:
 	current_health += amount
-	clampf(current_health, 0, max_health)
+	current_health = clampf(current_health, 0, max_health)
 	health_changed.emit()
 	

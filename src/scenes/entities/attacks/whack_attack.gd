@@ -9,7 +9,7 @@ func _ready():
 	sprite.visible = false
 	
 
-func attack(direction: Vector2) -> void:
+func attack(direction: Vector2, hit_layers: Array[int]) -> void:
 	sprite.visible = true
 	sprite.play()
 	for area in hurtbox.get_overlapping_areas():

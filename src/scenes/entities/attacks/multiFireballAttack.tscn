@@ -7,6 +7,7 @@
 [node name="MultiFireballAttack" type="Node2D" unique_id=1217824823 node_paths=PackedStringArray("fireball_spawner")]
 script = ExtResource("1_u6amx")
 fireball_spawner = NodePath("ProjectileSpawner")
+fireball_number = null
 
 [node name="ProjectileSpawner" parent="." unique_id=1217009242 instance=ExtResource("2_3kduy")]
 ProjectileScene = ExtResource("3_txnis")

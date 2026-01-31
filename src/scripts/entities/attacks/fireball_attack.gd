@@ -5,5 +5,5 @@ extends Attack
 func _ready() -> void:
 	fireball_spawner = get_node("ProjectileSpawner")
 
-func attack(direction: Vector2) -> void:
-	fireball_spawner.spawn_projectile(direction)	
+func attack(direction: Vector2, hit_layers: Array[int]) -> void:
+	fireball_spawner.spawn_projectile(direction, hit_layers)	

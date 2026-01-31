@@ -5,10 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bd7qh1svr4ggi" path="res://src/scenes/entities/attacks/whackAttack.tscn" id="4_u62bl"]
 [ext_resource type="PackedScene" uid="uid://cnjjrpxub3wog" path="res://src/scenes/components/simple_enemy_controller.tscn" id="6_2a5gd"]
 
-[node name="MeleeEnemy" type="Node2D" unique_id=328401243 node_paths=PackedStringArray("controller", "attack1")]
+[node name="MeleeEnemy" type="Node2D" unique_id=328401243]
 script = ExtResource("1_a2hju")
-controller = NodePath("CharController")
-attack1 = NodePath("Attack1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=72419628]
 scale = Vector2(5, 5)
