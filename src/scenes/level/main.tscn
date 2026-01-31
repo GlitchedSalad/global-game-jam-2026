@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://c2tos1omse0cv" path="res://icon.svg" id="4_srwyl"]
 [ext_resource type="PackedScene" uid="uid://dbheax1kx27dy" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
 [ext_resource type="PackedScene" uid="uid://dcdntvpo1nj4i" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
+[ext_resource type="PackedScene" uid="uid://hk2c87ramnko" path="res://src/scenes/entities/attacks/fireballAttack.tscn" id="8_msnoq"]
+[ext_resource type="PackedScene" uid="uid://bshpxi4v4f6ni" path="res://src/scenes/entities/projectileSpawner.tscn" id="9_qm6ml"]
+[ext_resource type="PackedScene" uid="uid://vecdkg8tcvyq" path="res://src/scenes/entities/projectiles/fireballProjectile.tscn" id="10_spl18"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_srwyl"]
 texture = ExtResource("2_8c177")
@@ -598,7 +601,7 @@ tile_set = SubResource("TileSet_awelt")
 tile_set = SubResource("TileSet_msnoq")
 script = ExtResource("4_6omyi")
 
-[node name="CharacterBase" parent="." unique_id=2023623591 node_paths=PackedStringArray("controller") instance=ExtResource("2_2couc")]
+[node name="CharacterBase" parent="." unique_id=2023623591 node_paths=PackedStringArray("controller") groups=["player"] instance=ExtResource("2_2couc")]
 controller = NodePath("CharController")
 
 [node name="CharController" parent="CharacterBase" unique_id=823443357 instance=ExtResource("3_8c177")]
@@ -613,6 +616,11 @@ texture = ExtResource("4_srwyl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBase/Area2D" unique_id=557803962]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_8c177")
+
+[node name="Attack1" parent="CharacterBase" unique_id=367342759 instance=ExtResource("8_msnoq")]
+
+[node name="ProjectileSpawner" parent="CharacterBase/Attack1" unique_id=1217009242 instance=ExtResource("9_qm6ml")]
+ProjectileScene = ExtResource("10_spl18")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=680524002]
 

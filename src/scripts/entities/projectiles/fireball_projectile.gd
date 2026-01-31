@@ -21,7 +21,10 @@ func initialize(direction: Vector2, position: Vector2) -> void:
 	add_child(lifeTimer)
 	lifeTimer.autostart = true
 	
-	
+
+func _process(delta: float) -> void:
+	position += direction * speed * delta
+
 func _on_hurtbox_hit(hitbox: HitboxComponent):
 	sprite.visible = false
 	hurtbox.set_deferred("Monitoring", false)
