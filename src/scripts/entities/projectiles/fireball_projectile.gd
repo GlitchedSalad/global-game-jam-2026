@@ -26,7 +26,7 @@ func initialize(_direction: Vector2, _position: Vector2, hit_layers: Array[int])
 	add_child(lifeTimer)
 	lifeTimer.autostart = true
 	sprite.play()
-	sprite.rotation = _direction.angle()
+	sprite.rotation = _direction.angle() + PI / 2
 	
 
 func _process(delta: float) -> void:
