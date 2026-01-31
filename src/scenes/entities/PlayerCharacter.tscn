@@ -15,8 +15,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_hon5w"]
 radius = 52.153618
 
-[node name="PlayerCharacter" type="Node2D" unique_id=1184929539]
+[node name="PlayerCharacter" type="Node2D" unique_id=1184929539 node_paths=PackedStringArray("shield", "controller", "attack1", "attack2")]
 script = ExtResource("1_848is")
+shield = NodePath("Shield")
+controller = NodePath("CharController")
+attack1 = NodePath("Attack1")
+attack2 = NodePath("Attack2")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=561554636]
 position = Vector2(0, -5.505)
