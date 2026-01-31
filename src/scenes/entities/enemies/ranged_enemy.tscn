@@ -1,26 +1,22 @@
 [gd_scene format=3 uid="uid://cb8m2kmr8g1dy"]
 
 [ext_resource type="Script" uid="uid://dddji48kx5pfx" path="res://src/scripts/entities/character_base.gd" id="1_7yu57"]
-[ext_resource type="Texture2D" uid="uid://c2tos1omse0cv" path="res://icon.svg" id="2_1w4gr"]
+[ext_resource type="Texture2D" uid="uid://dctiqi8vrmlxg" path="res://src/assets/temp_art/tile_0084.png" id="2_1w4gr"]
 [ext_resource type="PackedScene" uid="uid://hk2c87ramnko" path="res://src/scenes/entities/attacks/fireballAttack.tscn" id="3_13sxj"]
 [ext_resource type="PackedScene" uid="uid://d2gum0xjqtefg" path="res://src/scenes/components/simple_ranged_enemy_controller.tscn" id="6_yefal"]
-[ext_resource type="PackedScene" uid="uid://bjf0ikgfprwt7" path="res://src/scenes/components/healthComponent.tscn" id="7_xbd8t"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/healthComponent.tscn" id="7_xbd8t"]
 [ext_resource type="PackedScene" uid="uid://bqv7bi33vhg54" path="res://src/scenes/components/healthBarComponent.tscn" id="8_mbj6v"]
-[ext_resource type="PackedScene" uid="uid://1m2glmtcoar3" path="res://src/scenes/components/hitboxComponent.tscn" id="9_yefal"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/hitboxComponent.tscn" id="9_yefal"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bmaf"]
 size = Vector2(64, 63)
 
-[node name="RangedEnemy" type="Node2D" unique_id=817956454 node_paths=PackedStringArray("controller", "attack1", "attack2")]
+[node name="RangedEnemy" type="Node2D" unique_id=817956454]
 script = ExtResource("1_7yu57")
-controller = NodePath("CharController")
-attack1 = NodePath("Attack1")
-attack2 = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=906442416]
+scale = Vector2(5, 5)
 texture = ExtResource("2_1w4gr")
-hframes = 2
-vframes = 2
 
 [node name="Attack1" parent="." unique_id=367342759 instance=ExtResource("3_13sxj")]
 
