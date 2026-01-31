@@ -5,19 +5,20 @@
 [ext_resource type="PackedScene" path="res://src/scenes/components/healthComponent.tscn" id="3_hon5w"]
 [ext_resource type="PackedScene" uid="uid://befu18jlyojfb" path="res://src/scenes/components/hitboxComponent.tscn" id="4_66fhx"]
 [ext_resource type="PackedScene" uid="uid://bbpjtemgku5av" path="res://src/scenes/components/player_controller.tscn" id="5_8voux"]
-[ext_resource type="PackedScene" uid="uid://c1uypvlfpwaef" path="res://src/scenes/components/shield_roll.tscn" id="6_l51fx"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/shield_roll.tscn" id="6_l51fx"]
 [ext_resource type="PackedScene" uid="uid://hk2c87ramnko" path="res://src/scenes/entities/attacks/fireballAttack.tscn" id="7_lf6sb"]
 [ext_resource type="PackedScene" uid="uid://cq1u650n0o22j" path="res://src/scenes/entities/attacks/multiFireballAttack.tscn" id="8_66fhx"]
 [ext_resource type="Texture2D" uid="uid://dlth7b56uyqwj" path="res://src/assets/temp_art/tile_0085.png" id="9_66fhx"]
 [ext_resource type="PackedScene" uid="uid://2fb1k7sjbmm5" path="res://src/scenes/components/magnet.tscn" id="10_8voux"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_66fhx"]
-radius = 37.01351
+radius = 30.016663
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hon5w"]
 radius = 52.153618
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1823924956]
+motion_mode = 1
 script = ExtResource("1_848is")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1639054082]

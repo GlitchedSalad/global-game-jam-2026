@@ -41,3 +41,9 @@ text = "Health:"
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("2_2sykr")
+
+[node name="Difficulty" type="Label" parent="." unique_id=1030170859]
+offset_left = 386.0
+offset_right = 466.0
+offset_bottom = 23.0
+text = "difficulty"
