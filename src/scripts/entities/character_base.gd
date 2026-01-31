@@ -5,9 +5,9 @@ var controller : Node
 var health: HealthComponent
 var death: DeathComponent
 
-var attack1: Attack
-var attack2: Attack
-var special: Attack
+var attack1
+var attack2
+var special
 var shield
 
 var direction: Vector2
