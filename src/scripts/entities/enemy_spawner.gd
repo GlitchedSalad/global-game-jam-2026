@@ -4,6 +4,7 @@ extends Node2D
 
 @export var melee_enemy : PackedScene
 @export var ranged_enemy : PackedScene
+@export var exploding_enemy : PackedScene
 @export var bounds_min: Vector2 = Vector2(-960, -540)
 @export var bounds_max: Vector2 = Vector2( 960,  540)
 
@@ -27,11 +28,13 @@ func _on_spawn_timer():
 		var target = players[randi_range(0, players.size() - 1)]
 
 		var new_enemy
-
-		if randi_range(0,1):
+		var enemy_spawn = randi_range(0, 2)
+		if enemy_spawn == 0:
 			new_enemy = melee_enemy.instantiate()
-		else:
+		elif enemy_spawn == 1:
 			new_enemy = ranged_enemy.instantiate()
+		else:
+			new_enemy = exploding_enemy.instantiate()
 		
 		#new_enemy.global_position = target.global_position + Vector2(spawn_radius, 0).rotated(randf_range(0, 2 * PI))
 		new_enemy.global_position = boundary_spawn(target.global_position)
