@@ -5,6 +5,13 @@ var enemy_kills : int = 0
 var points : int = 0
 var Health_1 : int = 100
 var Health_2 : int = -99 #set to -99 to diasable
+var run_time: float = 0.0
+var difficulty: float = 1.0
+
+# Base difficulty values
+@export var difficulty_start: float = 1.0
+@export var difficulty_growth_per_sec: float = 0.02
+@export var difficulty_cap: float = 30.0
 
 signal points_changed
 signal player_1_health_change
@@ -12,6 +19,7 @@ signal player_2_health_change
 
 func _ready():
 	process_mode = PROCESS_MODE_ALWAYS
+	difficulty = difficulty_start
 
 func add_points(amount : int):
 	points += amount
@@ -26,6 +34,21 @@ func update_health_1(health : int):
 func update_health_2(health : int):
 	Health_2 = health
 	player_2_health_change.emit()
+
+
+
+func _process(delta: float) -> void:
+	run_time += delta
+	var new_difficulty: float = min(
+	difficulty_start + run_time * difficulty_growth_per_sec,
+	difficulty_cap
+)
+#Only emit when it actually changes enough to matter (prevents spam)
+	if abs(new_difficulty - difficulty) >= 0.01:
+		difficulty = new_difficulty
+		emit_signal("difficulty_changed")
+func get_difficulty() -> float:
+	return difficulty
 
 # Global functions
 

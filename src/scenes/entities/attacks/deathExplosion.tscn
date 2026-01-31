@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://cieitkovojmwj"]
+
+[ext_resource type="PackedScene" uid="uid://bys6hebroqph3" path="res://src/scenes/components/hurtboxComponent.tscn" id="1_6pgn4"]
+[ext_resource type="Script" uid="uid://ot25ktr714x0" path="res://src/scripts/entities/attacks/death_explosion.gd" id="1_ros5y"]
+[ext_resource type="Texture2D" uid="uid://cwshrasc6vrjk" path="res://src/assets/Particle FX/Dust_02.png" id="2_ros5y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_upvla"]
+radius = 200.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je2c7"]
+atlas = ExtResource("2_ros5y")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxgty"]
+atlas = ExtResource("2_ros5y")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwxqy"]
+atlas = ExtResource("2_ros5y")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akdh4"]
+atlas = ExtResource("2_ros5y")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2qfu"]
+atlas = ExtResource("2_ros5y")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lu27u"]
+atlas = ExtResource("2_ros5y")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3fow"]
+atlas = ExtResource("2_ros5y")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2lgq"]
+atlas = ExtResource("2_ros5y")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b31sh"]
+atlas = ExtResource("2_ros5y")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw01j"]
+atlas = ExtResource("2_ros5y")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k33wf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je2c7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxgty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwxqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akdh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2qfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lu27u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3fow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2lgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b31sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hw01j")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="DeathExplosion" type="Node2D" unique_id=209497775]
+script = ExtResource("1_ros5y")
+
+[node name="HurtboxComponent" parent="." unique_id=751094630 instance=ExtResource("1_6pgn4")]
+damage_amount = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=926324229]
+shape = SubResource("CircleShape2D_upvla")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=478087789]
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_k33wf")

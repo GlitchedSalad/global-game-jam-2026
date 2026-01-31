@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://burlmjk5e0us"]
+
+[ext_resource type="Script" uid="uid://dddji48kx5pfx" path="res://src/scripts/entities/character_base.gd" id="1_uyfks"]
+[ext_resource type="Texture2D" uid="uid://g5ttefk6e3kx" path="res://src/assets/temp_art/tile_0110.png" id="2_v5cxi"]
+[ext_resource type="PackedScene" uid="uid://c2ejhhm62dbxf" path="res://src/scenes/components/explodingEnemyController.tscn" id="3_v5cxi"]
+[ext_resource type="PackedScene" uid="uid://bjf0ikgfprwt7" path="res://src/scenes/components/healthComponent.tscn" id="4_prxqp"]
+[ext_resource type="PackedScene" uid="uid://befu18jlyojfb" path="res://src/scenes/components/hitboxComponent.tscn" id="5_awsou"]
+[ext_resource type="PackedScene" uid="uid://bqv7bi33vhg54" path="res://src/scenes/components/healthBarComponent.tscn" id="6_dbo8a"]
+[ext_resource type="PackedScene" uid="uid://3ev1gw0ospy2" path="res://src/scenes/components/explodingDeathComponent.tscn" id="7_awsou"]
+[ext_resource type="PackedScene" uid="uid://cieitkovojmwj" path="res://src/scenes/entities/attacks/deathExplosion.tscn" id="8_dbo8a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ndbrd"]
+radius = 40.012497
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hjwny"]
+radius = 40.012497
+
+[node name="ExplodingEnemy" type="CharacterBody2D" unique_id=1919042887]
+script = ExtResource("1_uyfks")
+metadata/_custom_type_script = "uid://dddji48kx5pfx"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=158485154]
+scale = Vector2(5, 5)
+texture = ExtResource("2_v5cxi")
+
+[node name="CharController" parent="." unique_id=404651957 instance=ExtResource("3_v5cxi")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2109409480]
+shape = SubResource("CircleShape2D_ndbrd")
+
+[node name="HealthComponent" parent="." unique_id=530295951 instance=ExtResource("4_prxqp")]
+
+[node name="HitboxComponent" parent="." unique_id=1013292098 node_paths=PackedStringArray("health_component") instance=ExtResource("5_awsou")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=568497302]
+shape = SubResource("CircleShape2D_hjwny")
+
+[node name="HealthBarComponent" parent="." unique_id=1034124488 node_paths=PackedStringArray("health_component") instance=ExtResource("6_dbo8a")]
+health_component = NodePath("../HealthComponent")
+
+[node name="DeathComponent" parent="." unique_id=1604719502 instance=ExtResource("7_awsou")]
+explosionScene = ExtResource("8_dbo8a")
