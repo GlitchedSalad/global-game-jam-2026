@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://bodfe3aoyinoc"]
 
 [ext_resource type="Script" uid="uid://cipry58cvyjrs" path="res://src/scripts/level/help_page.gd" id="1_61x2e"]
+[ext_resource type="Texture2D" uid="uid://drlxy23yxwhv3" path="res://src/assets/temp_art/tile_0122.png" id="2_bp8wb"]
+[ext_resource type="Texture2D" uid="uid://dctiqi8vrmlxg" path="res://src/assets/temp_art/tile_0084.png" id="3_4dqod"]
+[ext_resource type="Texture2D" uid="uid://g5ttefk6e3kx" path="res://src/assets/temp_art/tile_0110.png" id="4_eypjx"]
+[ext_resource type="Texture2D" uid="uid://cng1c7pw5d1x8" path="res://src/assets/temp_art/tile_0109.png" id="5_a17ux"]
 
 [node name="HelpPage" type="Node2D" unique_id=1154343386]
 script = ExtResource("1_61x2e")
@@ -23,6 +27,7 @@ vertical_alignment = 1
 
 [node name="Description" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=507065294]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Use WASD to move around, use arrow keys to use abilities"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -33,10 +38,16 @@ size_flags_horizontal = 4
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=458398864]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Enemies"
 
 [node name="Melee" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=2044556059]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/VBoxContainer/Melee" unique_id=324111951]
+layout_mode = 2
+texture = ExtResource("2_bp8wb")
+stretch_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Melee" unique_id=894352945]
 layout_mode = 2
@@ -45,6 +56,11 @@ text = "Melee enemies attack you on contact and block your movement"
 [node name="Ranged" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=795900263]
 layout_mode = 2
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/VBoxContainer/Ranged" unique_id=2075040881]
+layout_mode = 2
+texture = ExtResource("3_4dqod")
+stretch_mode = 2
+
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Ranged" unique_id=151873505]
 layout_mode = 2
 text = "Ranged enemies shoot you from range"
@@ -52,12 +68,22 @@ text = "Ranged enemies shoot you from range"
 [node name="Exploding" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=411133327]
 layout_mode = 2
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/VBoxContainer/Exploding" unique_id=1945750232]
+layout_mode = 2
+texture = ExtResource("4_eypjx")
+stretch_mode = 2
+
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Exploding" unique_id=901527905]
 layout_mode = 2
 text = "Exploding enemies explode when killed"
 
 [node name="Tank" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=1095204338]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/VBoxContainer/Tank" unique_id=1227631092]
+layout_mode = 2
+texture = ExtResource("5_a17ux")
+stretch_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Tank" unique_id=762818878]
 layout_mode = 2
