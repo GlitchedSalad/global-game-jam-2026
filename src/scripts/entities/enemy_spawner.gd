@@ -4,6 +4,10 @@ extends Node2D
 
 @export var melee_enemy : PackedScene
 @export var ranged_enemy : PackedScene
+@export var bounds_min: Vector2 = Vector2(-960, -540)
+@export var bounds_max: Vector2 = Vector2( 960,  540)
+
+@export var enemy_padding: float = 32.0 # keep enemies away from exact edge
 
 var players : Array
 var spawn_wave_time := 10.0
@@ -29,7 +33,19 @@ func _on_spawn_timer():
 		else:
 			new_enemy = ranged_enemy.instantiate()
 		
-		new_enemy.global_position = target.global_position + Vector2(spawn_radius, 0).rotated(randf_range(0, 2 * PI))
+		#new_enemy.global_position = target.global_position + Vector2(spawn_radius, 0).rotated(randf_range(0, 2 * PI))
+		new_enemy.global_position = boundary_spawn(target.global_position)
 		get_tree().root.add_child.call_deferred(new_enemy)
 		await get_tree().create_timer(spawn_offset).timeout
 	
+## spawn within the boundry walls
+func boundary_spawn(center: Vector2) -> Vector2:
+	# 1) pick a point on a circle around the player
+	var angle := randf_range(0.0, TAU)
+	var pos := center + Vector2(spawn_radius, 0).rotated(angle)
+
+	# 2) clamp inside the rectangle bounds (with padding)
+	pos.x = clamp(pos.x, bounds_min.x + enemy_padding, bounds_max.x - enemy_padding)
+	pos.y = clamp(pos.y, bounds_min.y + enemy_padding, bounds_max.y - enemy_padding)
+
+	return pos

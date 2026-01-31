@@ -86,3 +86,7 @@ tile_set = SubResource("TileSet_awelt")
 tile_set = SubResource("TileSet_msnoq")
 script = ExtResource("3_4yxcv")
 tree_chance = 0.05
+min_x = -19
+max_x = 19
+min_y = -19
+max_y = 19
