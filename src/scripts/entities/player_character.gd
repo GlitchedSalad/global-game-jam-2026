@@ -1,10 +1,7 @@
 class_name Player
 extends CharacterBase
 
-@export var shield : Node
-
 func _ready() -> void:
-	shield = get_node("Shield")
 	controller.shield.connect(_on_shield)
 	controller.move.connect(_on_controller_move)
 	controller.attack1.connect(_on_attack1)
