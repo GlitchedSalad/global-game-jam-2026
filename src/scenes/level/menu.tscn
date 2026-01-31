@@ -36,3 +36,7 @@ text = "Quit"
 [node name="HelpButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1537824816]
 layout_mode = 2
 text = "How to play"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HelpButton" to="." method="_on_help_button_pressed"]
