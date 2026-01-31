@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bd7qh1svr4ggi"]
+
+[ext_resource type="Script" uid="uid://csgxut0a2emde" path="res://src/scenes/entities/attacks/whack_attack.gd" id="1_7fsew"]
+[ext_resource type="Texture2D" uid="uid://cwshrasc6vrjk" path="res://src/assets/Particle FX/Dust_02.png" id="2_aafby"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/hurtboxComponent.tscn" id="3_vnpfi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gilyp"]
+atlas = ExtResource("2_aafby")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2irkt"]
+atlas = ExtResource("2_aafby")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdc4p"]
+atlas = ExtResource("2_aafby")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8jfl"]
+atlas = ExtResource("2_aafby")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y20l"]
+atlas = ExtResource("2_aafby")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n5ta"]
+atlas = ExtResource("2_aafby")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3tr5"]
+atlas = ExtResource("2_aafby")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klrtc"]
+atlas = ExtResource("2_aafby")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53pkc"]
+atlas = ExtResource("2_aafby")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl7ei"]
+atlas = ExtResource("2_aafby")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l0sjb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gilyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2irkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdc4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8jfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y20l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n5ta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3tr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klrtc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53pkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl7ei")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c6e2c"]
+radius = 37.054016
+
+[node name="WhackAttack" type="Node2D" unique_id=1544179487]
+script = ExtResource("1_7fsew")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=784412903]
+sprite_frames = SubResource("SpriteFrames_l0sjb")
+frame = 10
+frame_progress = 1.0
+
+[node name="HurtboxComponent" parent="." unique_id=751094630 instance=ExtResource("3_vnpfi")]
+damage_amount = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=717068897]
+shape = SubResource("CircleShape2D_c6e2c")

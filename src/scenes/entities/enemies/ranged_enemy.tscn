@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cb8m2kmr8g1dy"]
+
+[ext_resource type="Script" uid="uid://dddji48kx5pfx" path="res://src/scripts/entities/character_base.gd" id="1_7yu57"]
+[ext_resource type="Texture2D" uid="uid://c2tos1omse0cv" path="res://icon.svg" id="2_1w4gr"]
+[ext_resource type="PackedScene" uid="uid://hk2c87ramnko" path="res://src/scenes/entities/attacks/fireballAttack.tscn" id="3_13sxj"]
+[ext_resource type="PackedScene" uid="uid://bshpxi4v4f6ni" path="res://src/scenes/entities/projectileSpawner.tscn" id="4_xbd8t"]
+[ext_resource type="PackedScene" uid="uid://vecdkg8tcvyq" path="res://src/scenes/entities/projectiles/fireballProjectile.tscn" id="5_mbj6v"]
+[ext_resource type="PackedScene" uid="uid://d2gum0xjqtefg" path="res://src/scenes/components/simple_ranged_enemy_controller.tscn" id="6_yefal"]
+
+[node name="RangedEnemy" type="Node2D" unique_id=817956454 node_paths=PackedStringArray("controller", "attack1")]
+script = ExtResource("1_7yu57")
+controller = NodePath("CharController")
+attack1 = NodePath("Attack1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=906442416]
+texture = ExtResource("2_1w4gr")
+hframes = 2
+vframes = 2
+
+[node name="Attack1" parent="." unique_id=367342759 instance=ExtResource("3_13sxj")]
+
+[node name="ProjectileSpawner" parent="Attack1" unique_id=1217009242 instance=ExtResource("4_xbd8t")]
+ProjectileScene = ExtResource("5_mbj6v")
+
+[node name="CharController" parent="." unique_id=273893491 instance=ExtResource("6_yefal")]
