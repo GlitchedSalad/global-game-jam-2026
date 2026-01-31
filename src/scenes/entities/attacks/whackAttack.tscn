@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bd7qh1svr4ggi"]
 
-[ext_resource type="Script" uid="uid://csgxut0a2emde" path="res://src/scenes/entities/attacks/whack_attack.gd" id="1_7fsew"]
+[ext_resource type="Script" path="res://src/scripts/entities/attacks/whack_attack.gd" id="1_7fsew"]
 [ext_resource type="Texture2D" uid="uid://cwshrasc6vrjk" path="res://src/assets/Particle FX/Dust_02.png" id="2_aafby"]
 [ext_resource type="PackedScene" uid="uid://bys6hebroqph3" path="res://src/scenes/components/hurtboxComponent.tscn" id="3_vnpfi"]
 

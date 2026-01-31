@@ -59,7 +59,7 @@ func setup_listeners() -> void:
 	if (shield is Attack):
 		controller.shield.connect(_on_shield)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _on_controller_move(vec : Vector2):
