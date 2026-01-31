@@ -4,3 +4,5 @@
 
 [node name="SimpleEnemyController" type="Node2D" unique_id=589336082]
 script = ExtResource("1_4v5a4")
+
+[node name="Timer" type="Timer" parent="." unique_id=1939641603]
