@@ -1,12 +1,12 @@
 extends Projectile
 
-@export var speed = 2000
-@export var life_duration = 3.0
+@export var speed = 1000
+@export var life_duration = 1.0
 var direction: Vector2
 var hurtbox: HurtboxComponent
 var hitEffect: GPUParticles2D
 var lifeTimer:= Timer.new()
-var sprite: Sprite2D
+var sprite: AnimatedSprite2D
 
 func initialize(direction: Vector2, position: Vector2) -> void:
 	sprite = get_node("Sprite2D")
@@ -20,6 +20,8 @@ func initialize(direction: Vector2, position: Vector2) -> void:
 	lifeTimer.timeout.connect(queue_free)
 	add_child(lifeTimer)
 	lifeTimer.autostart = true
+	sprite.play()
+	sprite.rotation = direction.angle()
 	
 
 func _process(delta: float) -> void:
