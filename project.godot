@@ -11,12 +11,19 @@ config_version=5
 [application]
 
 config/name="Global Game Jam 2026"
+run/main_scene="uid://b1tpjsk4yb3br"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
+GlobalData="*uid://c6hojmayj4deq"
 Global="*uid://c6hojmayj4deq"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [file_customization]
 
