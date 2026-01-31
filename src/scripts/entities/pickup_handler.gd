@@ -1,5 +1,7 @@
+class_name Pickup
 extends Node2D
-@export var xp = 10
+
+@export var xp: int = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,7 +1,10 @@
 extends Node
 @export var player = 0
 
-@export var speed := 150
+@export var speed := 100
+
+@export var death_component: DeathComponent
+
 var direction : Vector2
 
 signal move(value : Vector2)
@@ -62,3 +65,4 @@ func _process(delta: float) -> void:
 		emit_signal("attack2")
 	if Input.is_action_just_pressed(special_input):
 		emit_signal("special")
+		
