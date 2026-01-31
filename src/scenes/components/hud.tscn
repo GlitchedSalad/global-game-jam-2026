@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dcdntvpo1nj4i"]
+
+[ext_resource type="Script" uid="uid://dlwicvqubsoc7" path="res://src/scripts/components/hud.gd" id="1_ljdyf"]
+
+[node name="HUD" type="CanvasLayer" unique_id=30475843]
+script = ExtResource("1_ljdyf")
+
+[node name="Points" type="Label" parent="." unique_id=1362633213]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.5
+offset_right = 26.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Points:"
