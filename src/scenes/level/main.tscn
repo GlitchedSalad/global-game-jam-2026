@@ -6,13 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://cb87npg0knyh0" path="res://src/assets/Terrain/Resources/Wood/Trees/Tree1.png" id="3_awelt"]
 [ext_resource type="Script" path="res://src/scenes/level/tree_gen.gd" id="4_6omyi"]
 [ext_resource type="Texture2D" uid="uid://c2tos1omse0cv" path="res://icon.svg" id="4_srwyl"]
-[ext_resource type="PackedScene" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
+[ext_resource type="PackedScene" uid="uid://dbheax1kx27dy" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
 [ext_resource type="PackedScene" uid="uid://cfl6rcjkfgn62" path="res://src/scenes/entities/PlayerCharacter.tscn" id="5_spl18"]
-[ext_resource type="PackedScene" uid="uid://dcdntvpo1nj4i" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
+[ext_resource type="PackedScene" uid="uid://degqe15fqcd77" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
 [ext_resource type="PackedScene" uid="uid://hk2c87ramnko" path="res://src/scenes/entities/attacks/fireballAttack.tscn" id="8_msnoq"]
 [ext_resource type="PackedScene" uid="uid://bshpxi4v4f6ni" path="res://src/scenes/entities/projectileSpawner.tscn" id="9_qm6ml"]
 [ext_resource type="PackedScene" uid="uid://vecdkg8tcvyq" path="res://src/scenes/entities/projectiles/fireballProjectile.tscn" id="10_spl18"]
-[ext_resource type="PackedScene" uid="uid://d2gum0xjqtefg" path="res://src/scenes/components/simple_ranged_enemy_controller.tscn" id="13_spl18"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/simple_ranged_enemy_controller.tscn" id="13_spl18"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_srwyl"]
 texture = ExtResource("2_8c177")
