@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://b1tpjsk4yb3br"]
 
 [ext_resource type="Script" uid="uid://dnn805xcmj0l8" path="res://src/scripts/level/main.gd" id="1_0s8lj"]
-[ext_resource type="PackedScene" uid="uid://s8dc0iq28nca" path="res://src/scenes/entities/character_base.tscn" id="2_2couc"]
 [ext_resource type="Texture2D" uid="uid://du6cu4tylxi5q" path="res://src/assets/Terrain/Tileset/Tilemap_color1.png" id="2_8c177"]
 [ext_resource type="Texture2D" uid="uid://cb87npg0knyh0" path="res://src/assets/Terrain/Resources/Wood/Trees/Tree1.png" id="3_awelt"]
 [ext_resource type="Script" path="res://src/scenes/level/tree_gen.gd" id="4_6omyi"]
@@ -614,10 +613,8 @@ position = Vector2(120, 0)
 
 [node name="HUD" parent="." unique_id=30475843 instance=ExtResource("6_srwyl")]
 
-[node name="CharacterBase2" parent="." unique_id=1933474256 node_paths=PackedStringArray("controller", "attack1") instance=ExtResource("2_2couc")]
-position = Vector2(467, 180)
-controller = NodePath("CharController")
-attack1 = NodePath("Attack1")
+[node name="MeleeEnemy" parent="." unique_id=328401243 instance=ExtResource("14_yqvjp")]
+position = Vector2(508, 100)
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBase2" unique_id=834300249]
 texture = ExtResource("4_srwyl")
@@ -645,3 +642,5 @@ health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBase2/HitboxComponent" unique_id=507369368]
 shape = SubResource("CircleShape2D_jaxiw")
+[node name="RangedEnemy" parent="." unique_id=817956454 instance=ExtResource("9_pftw2")]
+position = Vector2(484, -233)
