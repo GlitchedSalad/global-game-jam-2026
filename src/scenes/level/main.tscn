@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://b1tpjsk4yb3br"]
 
 [ext_resource type="Script" uid="uid://dnn805xcmj0l8" path="res://src/scripts/level/main.gd" id="1_0s8lj"]
-[ext_resource type="PackedScene" uid="uid://b2qjcssc3mi5h" path="res://src/scenes/level/layer_holder.tscn" id="2_awelt"]
+[ext_resource type="PackedScene" path="res://src/scenes/level/layer_holder.tscn" id="2_awelt"]
 [ext_resource type="PackedScene" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
-[ext_resource type="PackedScene" path="res://src/scenes/entities/PlayerCharacter.tscn" id="5_spl18"]
-[ext_resource type="PackedScene" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
+[ext_resource type="PackedScene" uid="uid://cfl6rcjkfgn62" path="res://src/scenes/entities/PlayerCharacter.tscn" id="5_spl18"]
+[ext_resource type="PackedScene" uid="uid://dcdntvpo1nj4i" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
+[ext_resource type="PackedScene" uid="uid://bf1371i5sm82g" path="res://src/scenes/entities/enemy_spawner.tscn" id="8_6omyi"]
 [ext_resource type="PackedScene" uid="uid://cb8m2kmr8g1dy" path="res://src/scenes/entities/enemies/ranged_enemy.tscn" id="9_pftw2"]
 [ext_resource type="PackedScene" uid="uid://ccoduerdxk5ew" path="res://src/scenes/entities/enemies/melee_enemy.tscn" id="14_yqvjp"]
 
@@ -15,7 +16,7 @@ script = ExtResource("1_0s8lj")
 
 [node name="PlayerCharacter" parent="." unique_id=1184929539 groups=["player"] instance=ExtResource("5_spl18")]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=680524002]
+[node name="Camera2D" type="Camera2D" parent="PlayerCharacter" unique_id=680524002]
 
 [node name="pickup" parent="." unique_id=539630175 instance=ExtResource("5_8c177")]
 position = Vector2(120, 0)
@@ -27,3 +28,6 @@ position = Vector2(508, 100)
 
 [node name="RangedEnemy" parent="." unique_id=817956454 instance=ExtResource("9_pftw2")]
 position = Vector2(484, -233)
+
+[node name="EnemySpawner" parent="." unique_id=79452690 instance=ExtResource("8_6omyi")]
+position = Vector2(294, -11)
