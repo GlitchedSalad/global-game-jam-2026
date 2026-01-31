@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c7rbpfevmflih"]
+[gd_scene format=3 uid="uid://bey7v8l61kjm3"]
 
 [ext_resource type="Texture2D" uid="uid://cng1c7pw5d1x8" path="res://src/assets/temp_art/tile_0109.png" id="1_8epch"]
 [ext_resource type="Script" uid="uid://dddji48kx5pfx" path="res://src/scripts/entities/character_base.gd" id="1_vul6t"]
@@ -35,7 +35,7 @@ shape = SubResource("CircleShape2D_f3f4r")
 fireball_number = 16
 
 [node name="HealthComponent" parent="." unique_id=530295951 instance=ExtResource("5_6j76j")]
-max_health = 1000.0
+max_health = 300.0
 
 [node name="HealthBarComponent" parent="." unique_id=1034124488 node_paths=PackedStringArray("health_component") instance=ExtResource("6_davqp")]
 health_component = NodePath("../HealthComponent")

@@ -26,37 +26,16 @@ func add_points(amount : int):
 	points += amount
 	points_changed.emit()
 
-
 func update_health_1(health : int):
 	Health_1 = health
 	player_1_health_change.emit()
-
 
 func update_health_2(health : int):
 	Health_2 = health
 	player_2_health_change.emit()
 
-
-
-func _process(delta: float) -> void:
-	run_time += delta
-
-	var new_difficulty: float = min(
-		difficulty_start + (run_time * difficulty_growth_per_sec),
-		difficulty_cap
-	)
-
-	if new_difficulty != difficulty:
-		difficulty = new_difficulty
-		difficulty_changed.emit()
-
-	# DEBUG: print once per second
-	if int(run_time) % 1 == 0 and absf(fmod(run_time, 1.0)) < 0.02:
-		print("t=", snapped(run_time, 0.1), " diff=", snapped(difficulty, 0.01))
 func get_difficulty() -> float:
 	return difficulty
-
-
 
 # Global functions
 

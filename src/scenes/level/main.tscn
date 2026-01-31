@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://cc8sprxbralhd"]
+[gd_scene format=3 uid="uid://b1tpjsk4yb3br"]
 
 [ext_resource type="Script" uid="uid://dnn805xcmj0l8" path="res://src/scripts/level/main.gd" id="1_0s8lj"]
 [ext_resource type="PackedScene" uid="uid://b2qjcssc3mi5h" path="res://src/scenes/level/layer_holder.tscn" id="2_awelt"]
-[ext_resource type="PackedScene" uid="uid://dbheax1kx27dy" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
+[ext_resource type="PackedScene" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
 [ext_resource type="PackedScene" uid="uid://cfl6rcjkfgn62" path="res://src/scenes/entities/PlayerCharacter.tscn" id="5_spl18"]
 [ext_resource type="PackedScene" uid="uid://bf1371i5sm82g" path="res://src/scenes/entities/enemy_spawner.tscn" id="6_6omyi"]
 [ext_resource type="PackedScene" uid="uid://degqe15fqcd77" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
@@ -13,7 +13,6 @@ script = ExtResource("1_0s8lj")
 [node name="layer_holder" parent="." unique_id=1108319060 instance=ExtResource("2_awelt")]
 
 [node name="PlayerCharacter" parent="." unique_id=1184929539 groups=["player"] instance=ExtResource("5_spl18")]
-motion_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCharacter" unique_id=680524002]
 

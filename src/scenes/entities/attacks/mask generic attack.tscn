@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ctqv67h2ts1qf"]
+
+[ext_resource type="Script" uid="uid://dwijjo6rwfj6f" path="res://src/scripts/entities/attacks/mask_generic_attack.gd" id="1_42b0m"]
+[ext_resource type="PackedScene" uid="uid://bshpxi4v4f6ni" path="res://src/scenes/entities/projectileSpawner.tscn" id="2_o0io1"]
+[ext_resource type="PackedScene" uid="uid://vecdkg8tcvyq" path="res://src/scenes/entities/projectiles/fireballProjectile.tscn" id="3_oix8s"]
+
+[node name="MaskGenericAttack" type="Node2D" unique_id=2052013419]
+script = ExtResource("1_42b0m")
+
+[node name="ProjectileSpawner" parent="." unique_id=1217009242 instance=ExtResource("2_o0io1")]
+ProjectileScene = ExtResource("3_oix8s")
