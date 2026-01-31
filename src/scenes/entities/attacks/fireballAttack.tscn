@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://hk2c87ramnko"]
+
+[ext_resource type="Script" uid="uid://dhobm1qepvjrb" path="res://src/scenes/entities/attacks/fireball_attack.gd" id="1_11kdk"]
+
+[node name="FireballAttack" type="Node2D" unique_id=367342759]
+script = ExtResource("1_11kdk")

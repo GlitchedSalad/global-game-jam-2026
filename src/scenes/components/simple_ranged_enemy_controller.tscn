@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d2gum0xjqtefg"]
+
+[ext_resource type="Script" uid="uid://c5ylfbtv83ouo" path="res://src/scripts/components/simple_ranged_enemy_controller.gd" id="1_hcpa4"]
+
+[node name="SimpleRangedEnemyController" type="Node2D" unique_id=273893491]
+script = ExtResource("1_hcpa4")
