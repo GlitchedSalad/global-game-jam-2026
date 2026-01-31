@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 var controller : Node
 var health: HealthComponent
+var hitbox: HitboxComponent
 var death: DeathComponent
 
 var attack1
@@ -11,6 +12,8 @@ var special
 var shield
 
 var direction: Vector2
+var hit_layers: Array[int] = [0]
+var attack_layers: Array[int] = [1]
 
 
 func _ready() -> void:
@@ -23,6 +26,14 @@ func _ready() -> void:
 	health = get_node_or_null("HealthComponent")
 	if (health is HealthComponent):
 		health.health_depleted.connect(_on_health_depleted)
+	
+	hitbox = get_node_or_null("HitboxComponent")
+	if (hitbox is HitboxComponent):
+		hitbox.collision_layer = 0
+		hitbox.collision_mask = 0
+		for i in range(len(hit_layers)):
+			hitbox.set_collision_layer_value(hit_layers[i] + 1, true)
+			hitbox.set_collision_mask_value(hit_layers[i] + 1, true)
 	
 	death = get_node_or_null("DeathComponent")
 	if (death is DeathComponent):
@@ -53,19 +64,21 @@ func _on_controller_move(vec : Vector2):
 		direction = vec
 
 func _on_attack1():
-	attack1.attack(direction)
+	attack1.attack(direction, attack_layers)
 
 func _on_attack2():
-	attack2.attack(direction)
+	attack2.attack(direction, attack_layers)
 
 func _on_special():
-	special.attack(direction)
+	special.attack(direction, attack_layers)
 
 func _on_shield():
 	pass
 
 func _on_health_depleted():
-	print("health gone")
+	#print("health gone")
+	pass
 
 func _on_died():
-	print("died")
+	#print("died")
+	pass
