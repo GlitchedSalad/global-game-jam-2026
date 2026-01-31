@@ -45,9 +45,9 @@ text = "Enemies"
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/VBoxContainer/Melee" unique_id=324111951]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("2_bp8wb")
-stretch_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Melee" unique_id=894352945]
 layout_mode = 2
@@ -57,9 +57,9 @@ text = "Melee enemies attack you on contact and block your movement"
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/VBoxContainer/Ranged" unique_id=2075040881]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("3_4dqod")
-stretch_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Ranged" unique_id=151873505]
 layout_mode = 2
@@ -69,9 +69,9 @@ text = "Ranged enemies shoot you from range"
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/VBoxContainer/Exploding" unique_id=1945750232]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("4_eypjx")
-stretch_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Exploding" unique_id=901527905]
 layout_mode = 2
@@ -81,9 +81,9 @@ text = "Exploding enemies explode when killed"
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/VBoxContainer/Tank" unique_id=1227631092]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("5_a17ux")
-stretch_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Tank" unique_id=762818878]
 layout_mode = 2
