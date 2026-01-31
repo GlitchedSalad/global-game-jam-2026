@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cb87npg0knyh0" path="res://src/assets/Terrain/Resources/Wood/Trees/Tree1.png" id="3_awelt"]
 [ext_resource type="Script" path="res://src/scenes/level/tree_gen.gd" id="4_6omyi"]
 [ext_resource type="Texture2D" uid="uid://c2tos1omse0cv" path="res://icon.svg" id="4_srwyl"]
-[ext_resource type="PackedScene" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
-[ext_resource type="PackedScene" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
+[ext_resource type="PackedScene" uid="uid://dbheax1kx27dy" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
+[ext_resource type="PackedScene" uid="uid://dcdntvpo1nj4i" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_srwyl"]
 texture = ExtResource("2_8c177")
@@ -598,9 +598,10 @@ tile_set = SubResource("TileSet_awelt")
 tile_set = SubResource("TileSet_msnoq")
 script = ExtResource("4_6omyi")
 
-[node name="CharacterBase" parent="." unique_id=2023623591 instance=ExtResource("2_2couc")]
+[node name="CharacterBase" parent="." unique_id=2023623591 node_paths=PackedStringArray("controller") instance=ExtResource("2_2couc")]
+controller = NodePath("CharController")
 
-[node name="PlayerController" parent="CharacterBase" unique_id=823443357 instance=ExtResource("3_8c177")]
+[node name="CharController" parent="CharacterBase" unique_id=823443357 instance=ExtResource("3_8c177")]
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBase" unique_id=1562280727]
 texture = ExtResource("4_srwyl")
@@ -613,9 +614,7 @@ texture = ExtResource("4_srwyl")
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_8c177")
 
-[node name="CharacterBase2" parent="." unique_id=793985626 groups=["player"] instance=ExtResource("2_2couc")]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=505649850]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=680524002]
 
 [node name="pickup" parent="." unique_id=539630175 instance=ExtResource("5_8c177")]
 position = Vector2(120, 0)
