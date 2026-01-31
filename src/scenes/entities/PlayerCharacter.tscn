@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bsrrc4tvxcgr" path="res://src/scripts/entities/player_character.gd" id="1_848is"]
 [ext_resource type="PackedScene" path="res://src/scenes/components/healthBarComponent.tscn" id="2_7n545"]
+[ext_resource type="Texture2D" uid="uid://cvey0jyh40pxk" path="res://src/assets/temp_art/tile_0086.png" id="2_l51fx"]
 [ext_resource type="PackedScene" path="res://src/scenes/components/healthComponent.tscn" id="3_hon5w"]
 [ext_resource type="PackedScene" path="res://src/scenes/components/hitboxComponent.tscn" id="4_66fhx"]
 [ext_resource type="PackedScene" uid="uid://bbpjtemgku5av" path="res://src/scenes/components/player_controller.tscn" id="5_8voux"]
 [ext_resource type="PackedScene" path="res://src/scenes/components/shield_roll.tscn" id="6_l51fx"]
 [ext_resource type="PackedScene" path="res://src/scenes/entities/attacks/fireballAttack.tscn" id="7_lf6sb"]
 [ext_resource type="PackedScene" path="res://src/scenes/entities/projectileSpawner.tscn" id="8_8voux"]
-[ext_resource type="Texture2D" uid="uid://c2tos1omse0cv" path="res://icon.svg" id="8_hon5w"]
 [ext_resource type="PackedScene" uid="uid://vecdkg8tcvyq" path="res://src/scenes/entities/projectiles/fireballProjectile.tscn" id="9_l51fx"]
 [ext_resource type="PackedScene" uid="uid://bd7qh1svr4ggi" path="res://src/scenes/entities/attacks/whackAttack.tscn" id="11_l51fx"]
 
@@ -23,10 +23,9 @@ attack1 = NodePath("Attack1")
 attack2 = NodePath("Attack2")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=561554636]
-texture = ExtResource("8_hon5w")
-hframes = 2
-vframes = 2
-frame = 2
+position = Vector2(0, -5.505)
+scale = Vector2(5.155, 5.155)
+texture = ExtResource("2_l51fx")
 
 [node name="HealthBarComponent" parent="." unique_id=1034124488 node_paths=PackedStringArray("health_component") instance=ExtResource("2_7n545")]
 health_component = NodePath("../HealthComponent")
