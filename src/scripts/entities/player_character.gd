@@ -1,5 +1,5 @@
 class_name Player
-extends "res://src/scripts/entities/character_base.gd"
+extends CharacterBase
 
 @export var shield : Node
 

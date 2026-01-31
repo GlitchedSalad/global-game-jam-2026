@@ -1,11 +1,11 @@
 class_name HealthBarComponent extends Node2D
 
 @export var health_component: HealthComponent
-@export var width: int:
+@export var width: int = 100:
 	set(value):
 		width = value
 		queue_redraw()
-@export var height: int:
+@export var height: int = 10:
 	set(value):
 		height = value
 		queue_redraw()

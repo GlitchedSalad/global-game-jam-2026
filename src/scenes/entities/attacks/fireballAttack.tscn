@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://hk2c87ramnko"]
 
-[ext_resource type="Script" uid="uid://dhobm1qepvjrb" path="res://src/scenes/entities/attacks/fireball_attack.gd" id="1_11kdk"]
+[ext_resource type="Script" uid="uid://dhobm1qepvjrb" path="res://src/scripts/entities/attacks/fireball_attack.gd" id="1_11kdk"]
+[ext_resource type="PackedScene" uid="uid://bshpxi4v4f6ni" path="res://src/scenes/entities/projectileSpawner.tscn" id="2_0v02c"]
+[ext_resource type="PackedScene" uid="uid://vecdkg8tcvyq" path="res://src/scenes/entities/projectiles/fireballProjectile.tscn" id="3_icyad"]
 
 [node name="FireballAttack" type="Node2D" unique_id=367342759]
 script = ExtResource("1_11kdk")
+
+[node name="ProjectileSpawner" parent="." unique_id=1217009242 instance=ExtResource("2_0v02c")]
+ProjectileScene = ExtResource("3_icyad")
