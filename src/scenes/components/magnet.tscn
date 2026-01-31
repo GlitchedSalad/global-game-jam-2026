@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://2fb1k7sjbmm5"]
+
+[ext_resource type="Script" uid="uid://bvfqrywudoe1" path="res://src/scripts/components/magnet_handler.gd" id="1_pwlc0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l51fx"]
+radius = 123.101585
+
+[node name="Area2D" type="Area2D" unique_id=666968627]
+script = ExtResource("1_pwlc0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=968347194]
+shape = SubResource("CircleShape2D_l51fx")
