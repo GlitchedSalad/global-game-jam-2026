@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://donyveyjvxmnm"]
+
+[ext_resource type="Texture2D" uid="uid://dao4pr7bu7xy3" path="res://src/assets/sprites/pickups/xp orb.png" id="1_irqpn"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6omyi"]
+
+[node name="pickup" type="Node2D" unique_id=539630175]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=847425276]
+material = SubResource("CanvasItemMaterial_6omyi")
+texture = ExtResource("1_irqpn")
