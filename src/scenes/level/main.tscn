@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dnn805xcmj0l8" path="res://src/scripts/level/main.gd" id="1_0s8lj"]
 [ext_resource type="PackedScene" uid="uid://b2qjcssc3mi5h" path="res://src/scenes/level/layer_holder.tscn" id="2_awelt"]
-[ext_resource type="PackedScene" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
+[ext_resource type="PackedScene" uid="uid://dbheax1kx27dy" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
 [ext_resource type="PackedScene" uid="uid://cfl6rcjkfgn62" path="res://src/scenes/entities/PlayerCharacter.tscn" id="5_spl18"]
 [ext_resource type="PackedScene" uid="uid://degqe15fqcd77" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
 [ext_resource type="PackedScene" uid="uid://cb8m2kmr8g1dy" path="res://src/scenes/entities/enemies/ranged_enemy.tscn" id="9_pftw2"]
@@ -18,7 +18,10 @@ motion_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCharacter" unique_id=680524002]
 
-[node name="pickup" parent="." unique_id=539630175 instance=ExtResource("5_8c177")]
+[node name="pickup2" parent="." unique_id=539630175 instance=ExtResource("5_8c177")]
+position = Vector2(240, 0)
+
+[node name="pickup" parent="." unique_id=1255364327 instance=ExtResource("5_8c177")]
 position = Vector2(120, 0)
 
 [node name="HUD" parent="." unique_id=30475843 instance=ExtResource("6_srwyl")]
