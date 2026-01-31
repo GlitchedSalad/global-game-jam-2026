@@ -55,7 +55,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	direction.y = Input.get_axis(up_input,down_input)
 	direction.x = Input.get_axis(left_input,right_input)
-	emit_signal("move", speed * direction * delta)
+	emit_signal("move", speed * direction)
 
 	if Input.is_action_just_pressed(sheild_input):
 		emit_signal("shield")
