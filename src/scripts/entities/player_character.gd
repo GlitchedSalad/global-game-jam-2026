@@ -13,3 +13,6 @@ func _ready():
 
 func add_xp(xp: int):
 	print("add me some xp")
+
+func _on_died():
+	pass

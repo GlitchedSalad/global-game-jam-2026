@@ -1,7 +1,7 @@
 extends Node
 @export var player = 0
 
-@export var speed := 100
+@export var speed := 200
 
 @export var death_component: DeathComponent
 
