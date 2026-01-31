@@ -4,13 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://ccoduerdxk5ew" path="res://src/scenes/entities/enemies/melee_enemy.tscn" id="2_3s6px"]
 [ext_resource type="PackedScene" uid="uid://cb8m2kmr8g1dy" path="res://src/scenes/entities/enemies/ranged_enemy.tscn" id="3_7gfo7"]
 [ext_resource type="PackedScene" uid="uid://burlmjk5e0us" path="res://src/scenes/entities/enemies/explodingEnemy.tscn" id="4_utk78"]
-[ext_resource type="PackedScene" path="res://src/scenes/entities/enemies/tank_enemy.tscn" id="4_utk78"]
+[ext_resource type="PackedScene" uid="uid://c7rbpfevmflih" path="res://src/scenes/entities/enemies/tank_enemy.tscn" id="5_daups"]
 
 [node name="EnemySpawner" type="Node2D" unique_id=79452690]
 script = ExtResource("1_i2xgq")
 melee_enemy = ExtResource("2_3s6px")
 ranged_enemy = ExtResource("3_7gfo7")
 exploding_enemy = ExtResource("4_utk78")
-tank_enemy = ExtResource("4_utk78")
+tank_enemy = ExtResource("5_daups")
 
 [node name="Timer" type="Timer" parent="." unique_id=974740]
