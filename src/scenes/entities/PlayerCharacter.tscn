@@ -1,28 +1,32 @@
-[gd_scene format=3 uid="uid://cfl6rcjkfgn62"]
+[gd_scene format=3 uid="uid://oh4agkwg28sb"]
 
 [ext_resource type="Script" uid="uid://bsrrc4tvxcgr" path="res://src/scripts/entities/player_character.gd" id="1_848is"]
 [ext_resource type="PackedScene" path="res://src/scenes/components/healthBarComponent.tscn" id="2_7n545"]
 [ext_resource type="PackedScene" path="res://src/scenes/components/healthComponent.tscn" id="3_hon5w"]
-[ext_resource type="PackedScene" uid="uid://befu18jlyojfb" path="res://src/scenes/components/hitboxComponent.tscn" id="4_66fhx"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/hitboxComponent.tscn" id="4_66fhx"]
 [ext_resource type="PackedScene" uid="uid://bbpjtemgku5av" path="res://src/scenes/components/player_controller.tscn" id="5_8voux"]
-[ext_resource type="PackedScene" uid="uid://c1uypvlfpwaef" path="res://src/scenes/components/shield_roll.tscn" id="6_l51fx"]
-[ext_resource type="PackedScene" uid="uid://hk2c87ramnko" path="res://src/scenes/entities/attacks/fireballAttack.tscn" id="7_lf6sb"]
-[ext_resource type="PackedScene" uid="uid://bshpxi4v4f6ni" path="res://src/scenes/entities/projectileSpawner.tscn" id="8_8voux"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/shield_roll.tscn" id="6_l51fx"]
+[ext_resource type="PackedScene" path="res://src/scenes/entities/attacks/fireballAttack.tscn" id="7_lf6sb"]
+[ext_resource type="PackedScene" path="res://src/scenes/entities/projectileSpawner.tscn" id="8_8voux"]
 [ext_resource type="Texture2D" uid="uid://c2tos1omse0cv" path="res://icon.svg" id="8_hon5w"]
 [ext_resource type="PackedScene" uid="uid://vecdkg8tcvyq" path="res://src/scenes/entities/projectiles/fireballProjectile.tscn" id="9_l51fx"]
-[ext_resource type="Script" uid="uid://bvfqrywudoe1" path="res://src/scripts/components/magnet_handler.gd" id="11_l51fx"]
+[ext_resource type="PackedScene" uid="uid://bd7qh1svr4ggi" path="res://src/scenes/entities/attacks/whackAttack.tscn" id="11_l51fx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hon5w"]
 radius = 52.153618
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_l51fx"]
-radius = 177.48521
-
-[node name="PlayerCharacter" type="Node2D" unique_id=1184929539 node_paths=PackedStringArray("shield_node", "controller", "attack1")]
+[node name="PlayerCharacter" type="Node2D" unique_id=1184929539 node_paths=PackedStringArray("shield", "controller", "attack1", "attack2")]
 script = ExtResource("1_848is")
-shield_node = NodePath("ShieldRoll")
+shield = NodePath("Shield")
 controller = NodePath("CharController")
 attack1 = NodePath("Attack1")
+attack2 = NodePath("Attack2")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=561554636]
+texture = ExtResource("8_hon5w")
+hframes = 2
+vframes = 2
+frame = 2
 
 [node name="HealthBarComponent" parent="." unique_id=1034124488 node_paths=PackedStringArray("health_component") instance=ExtResource("2_7n545")]
 health_component = NodePath("../HealthComponent")
@@ -37,21 +41,11 @@ shape = SubResource("CircleShape2D_hon5w")
 
 [node name="CharController" parent="." unique_id=823443357 instance=ExtResource("5_8voux")]
 
-[node name="ShieldRoll" parent="." unique_id=966327072 instance=ExtResource("6_l51fx")]
+[node name="Shield" parent="." unique_id=966327072 instance=ExtResource("6_l51fx")]
 
 [node name="Attack1" parent="." unique_id=367342759 instance=ExtResource("7_lf6sb")]
 
-[node name="ProjectileSpawner" parent="Attack1" unique_id=1217009242 instance=ExtResource("8_8voux")]
-ProjectileScene = ExtResource("9_l51fx")
+[node name="Attack2" parent="." unique_id=1217824823 instance=ExtResource("8_66fhx")]
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=561554636]
-texture = ExtResource("8_hon5w")
-hframes = 2
-vframes = 2
-frame = 2
-
-[node name="Area2D" type="Area2D" parent="." unique_id=520670048]
-script = ExtResource("11_l51fx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1154013227]
-shape = SubResource("CircleShape2D_l51fx")
+[node name="Attack2" parent="." unique_id=1544179487 instance=ExtResource("11_l51fx")]
+scale = Vector2(2.91, 2.91)

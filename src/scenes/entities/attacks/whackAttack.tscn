@@ -82,7 +82,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 12.0
+"speed": 24.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6e2c"]
@@ -97,6 +97,7 @@ frame = 10
 frame_progress = 1.0
 
 [node name="HurtboxComponent" parent="." unique_id=751094630 instance=ExtResource("3_vnpfi")]
+damage_amount = 20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=717068897]
 shape = SubResource("CircleShape2D_c6e2c")

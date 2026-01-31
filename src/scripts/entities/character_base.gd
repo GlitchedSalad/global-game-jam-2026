@@ -1,7 +1,9 @@
-class_name CharacterBase extends Node2D
+class_name CharacterBase
+extends Node2D
 
 @export var controller : Node
 @export var attack1: Attack
+@export var attack2: Attack
 var direction: Vector2
 
 var health: HealthComponent
@@ -10,14 +12,20 @@ var health: HealthComponent
 func _ready() -> void:
 	controller = get_node("CharController")
 	controller.move.connect(_on_controller_move)
-	attack1 = get_node("Attack1")
+	#attack1 = get_node("Attack1")
+	#attack2 = get_node("Attack2")
 	controller.attack1.connect(_on_attack1)
+	controller.attack2.connect(_on_attack2)
 	direction = Vector2.RIGHT
 	
 	health = get_node_or_null("HealthComponent")
 	if (health is HealthComponent):
 		health.health_depleted.connect(_on_health_depleted)
 		health.health_changed.connect(_on_health_changed)
+		
+	attack2 = get_node_or_null("Attack2")
+	if (attack2 is Attack):
+		controller.attack2.connect(_on_attack2)
 
 func _on_controller_move(vec : Vector2):
 	global_position += vec
@@ -26,6 +34,12 @@ func _on_controller_move(vec : Vector2):
 
 func _on_attack1():
 	attack1.attack(direction)
+
+func _on_attack2():
+	attack2.attack(direction)
+	
+func _on_attack2():
+	attack2.attack(direction)
 	
 func _on_health_depleted():
 	print("dead")

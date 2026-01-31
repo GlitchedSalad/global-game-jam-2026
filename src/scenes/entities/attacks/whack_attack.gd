@@ -13,7 +13,7 @@ func attack(direction: Vector2) -> void:
 	sprite.visible = true
 	sprite.play()
 	for area in hurtbox.get_overlapping_areas():
-		#area.take_damage()
-		pass
+		if area == HitboxComponent:
+			area.damage_within_hitbox(hurtbox.damage_amount)
 	await sprite.animation_finished
 	sprite.visible = false
