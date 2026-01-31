@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cfl6rcjkfgn62"]
+
+[ext_resource type="Script" uid="uid://cdrojqjinxiqa" path="res://src/scripts/entities/player_character.gd" id="1_848is"]
+[ext_resource type="PackedScene" uid="uid://bqv7bi33vhg54" path="res://src/scenes/components/healthBarComponent.tscn" id="2_7n545"]
+[ext_resource type="PackedScene" uid="uid://bjf0ikgfprwt7" path="res://src/scenes/components/healthComponent.tscn" id="3_hon5w"]
+[ext_resource type="PackedScene" uid="uid://1m2glmtcoar3" path="res://src/scenes/components/hitboxComponent.tscn" id="4_66fhx"]
+[ext_resource type="PackedScene" uid="uid://bbpjtemgku5av" path="res://src/scenes/components/player_controller.tscn" id="5_8voux"]
+[ext_resource type="PackedScene" uid="uid://c1uypvlfpwaef" path="res://src/scenes/components/shield_roll.tscn" id="6_l51fx"]
+[ext_resource type="PackedScene" uid="uid://hk2c87ramnko" path="res://src/scenes/entities/attacks/fireballAttack.tscn" id="7_lf6sb"]
+[ext_resource type="PackedScene" uid="uid://cq1u650n0o22j" path="res://src/scenes/entities/attacks/multiFireballAttack.tscn" id="8_66fhx"]
+[ext_resource type="Texture2D" uid="uid://c2tos1omse0cv" path="res://icon.svg" id="8_hon5w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hon5w"]
+radius = 52.153618
+
+[node name="PlayerCharacter" type="Node2D" unique_id=1184929539]
+script = ExtResource("1_848is")
+
+[node name="HealthBarComponent" parent="." unique_id=1034124488 node_paths=PackedStringArray("health_component") instance=ExtResource("2_7n545")]
+health_component = NodePath("../HealthComponent")
+
+[node name="HealthComponent" parent="." unique_id=530295951 instance=ExtResource("3_hon5w")]
+
+[node name="HitboxComponent" parent="." unique_id=1013292098 node_paths=PackedStringArray("health_component") instance=ExtResource("4_66fhx")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=801698190]
+shape = SubResource("CircleShape2D_hon5w")
+
+[node name="CharController" parent="." unique_id=823443357 instance=ExtResource("5_8voux")]
+
+[node name="ShieldRoll" parent="." unique_id=966327072 instance=ExtResource("6_l51fx")]
+
+[node name="Attack1" parent="." unique_id=367342759 instance=ExtResource("7_lf6sb")]
+
+[node name="Attack2" parent="." unique_id=1217824823 instance=ExtResource("8_66fhx")]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=561554636]
+texture = ExtResource("8_hon5w")
+hframes = 2
+vframes = 2
+frame = 2
