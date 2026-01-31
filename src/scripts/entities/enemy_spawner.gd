@@ -13,7 +13,8 @@ extends Node2D
 var players : Array
 var spawn_wave_time := 10.0
 var spawn_offset := 0.5
-var spawn_amount := 5
+var base_spawn_amount := 5
+var spawn_amount := int(base_spawn_amount * Global.get_difficulty())
 var spawn_radius := 1000.0
 
 func _ready() -> void:
