@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://lasgiphemqpb"]
+
+[ext_resource type="Script" uid="uid://dso0gfpwdcomy" path="res://src/scripts/components/tank_enemy_controller.gd" id="1_7xf44"]
+
+[node name="TankEnemyController" type="Node2D" unique_id=934956408]
+script = ExtResource("1_7xf44")
+
+[node name="Timer" type="Timer" parent="." unique_id=1278102217]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bsrrc4tvxcgr" path="res://src/scripts/entities/player_character.gd" id="1_848is"]
 [ext_resource type="PackedScene" uid="uid://bqv7bi33vhg54" path="res://src/scenes/components/healthBarComponent.tscn" id="2_7n545"]
-[ext_resource type="PackedScene" path="res://src/scenes/components/healthComponent.tscn" id="3_hon5w"]
+[ext_resource type="PackedScene" uid="uid://bjf0ikgfprwt7" path="res://src/scenes/components/healthComponent.tscn" id="3_hon5w"]
 [ext_resource type="PackedScene" uid="uid://befu18jlyojfb" path="res://src/scenes/components/hitboxComponent.tscn" id="4_66fhx"]
 [ext_resource type="PackedScene" uid="uid://bbpjtemgku5av" path="res://src/scenes/components/player_controller.tscn" id="5_8voux"]
 [ext_resource type="PackedScene" path="res://src/scenes/components/shield_roll.tscn" id="6_l51fx"]
@@ -28,6 +28,7 @@ shape = SubResource("CircleShape2D_66fhx")
 health_component = NodePath("../HealthComponent")
 
 [node name="HealthComponent" parent="." unique_id=530295951 instance=ExtResource("3_hon5w")]
+max_health = 500.0
 
 [node name="HitboxComponent" parent="." unique_id=1013292098 node_paths=PackedStringArray("health_component") instance=ExtResource("4_66fhx")]
 health_component = NodePath("../HealthComponent")

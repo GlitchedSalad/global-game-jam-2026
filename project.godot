@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Global Game Jam 2026"
-run/main_scene="uid://b1tpjsk4yb3br"
+run/main_scene="uid://balulasmywohy"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*uid://c6hojmayj4deq"
 GlobalData="*uid://c6hojmayj4deq"
+Global="*uid://c6hojmayj4deq"
 
 [display]
 

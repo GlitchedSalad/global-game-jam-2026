@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://3ev1gw0ospy2"]
+
+[ext_resource type="Script" uid="uid://bkqjt8ogcxeab" path="res://src/scripts/components/exploding_death_component.gd" id="1_ytu3d"]
+
+[node name="ExplodingDeathComponent" type="Node2D" unique_id=1604719502]
+script = ExtResource("1_ytu3d")
