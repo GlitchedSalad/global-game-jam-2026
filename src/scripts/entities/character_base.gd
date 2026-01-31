@@ -12,8 +12,10 @@ var health: HealthComponent
 func _ready() -> void:
 	controller = get_node("CharController")
 	controller.move.connect(_on_controller_move)
-	attack1 = get_node("Attack1")
+	#attack1 = get_node("Attack1")
+	#attack2 = get_node("Attack2")
 	controller.attack1.connect(_on_attack1)
+	controller.attack2.connect(_on_attack2)
 	direction = Vector2.RIGHT
 	
 	health = get_node_or_null("HealthComponent")
@@ -31,6 +33,9 @@ func _on_controller_move(vec : Vector2):
 
 func _on_attack1():
 	attack1.attack(direction)
+
+func _on_attack2():
+	attack2.attack(direction)
 	
 func _on_attack2():
 	attack2.attack(direction)

@@ -9,3 +9,5 @@ func _on_area_entered(area: Area2D) -> void:
 		health_component.remove_health(area.damage_amount)
 		hitbox_hit.emit(area)
 		
+func damage_within_hitbox(amount : float):
+	health_component.remove_health(amount)

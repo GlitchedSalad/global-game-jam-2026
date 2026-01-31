@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dddji48kx5pfx" path="res://src/scripts/entities/character_base.gd" id="1_a2hju"]
 [ext_resource type="Texture2D" uid="uid://c2tos1omse0cv" path="res://icon.svg" id="2_k4k13"]
-[ext_resource type="PackedScene" uid="uid://hk2c87ramnko" path="res://src/scenes/entities/attacks/fireballAttack.tscn" id="3_s0pi5"]
+[ext_resource type="PackedScene" uid="uid://bd7qh1svr4ggi" path="res://src/scenes/entities/attacks/whackAttack.tscn" id="4_u62bl"]
 [ext_resource type="PackedScene" uid="uid://cnjjrpxub3wog" path="res://src/scenes/components/simple_enemy_controller.tscn" id="6_2a5gd"]
 
 [node name="MeleeEnemy" type="Node2D" unique_id=328401243 node_paths=PackedStringArray("controller", "attack1")]
@@ -16,6 +16,6 @@ hframes = 2
 vframes = 2
 frame = 1
 
-[node name="Attack1" parent="." unique_id=367342759 instance=ExtResource("3_s0pi5")]
-
 [node name="CharController" parent="." unique_id=589336082 instance=ExtResource("6_2a5gd")]
+
+[node name="Attack1" parent="." unique_id=1544179487 instance=ExtResource("4_u62bl")]
