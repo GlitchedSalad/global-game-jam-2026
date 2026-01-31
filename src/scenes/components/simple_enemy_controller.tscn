@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://c3i4ehdk8a8xs" path="res://src/scripts/components/simple_enemy_controller.gd" id="1_4v5a4"]
 
-[node name="SimpleEnemyController" type="Node" unique_id=1241338402]
+[node name="SimpleEnemyController" type="Node2D" unique_id=589336082]
 script = ExtResource("1_4v5a4")
