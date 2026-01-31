@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cq1u650n0o22j"]
+
+[ext_resource type="Script" uid="uid://dmnr3xkwsvecm" path="res://src/scripts/entities/attacks/multi_fireball_attack.gd" id="1_u6amx"]
+[ext_resource type="PackedScene" uid="uid://bshpxi4v4f6ni" path="res://src/scenes/entities/projectileSpawner.tscn" id="2_3kduy"]
+[ext_resource type="PackedScene" uid="uid://vecdkg8tcvyq" path="res://src/scenes/entities/projectiles/fireballProjectile.tscn" id="3_txnis"]
+
+[node name="MultiFireballAttack" type="Node2D" unique_id=1217824823 node_paths=PackedStringArray("fireball_spawner")]
+script = ExtResource("1_u6amx")
+fireball_spawner = NodePath("ProjectileSpawner")
+
+[node name="ProjectileSpawner" parent="." unique_id=1217009242 instance=ExtResource("2_3kduy")]
+ProjectileScene = ExtResource("3_txnis")
