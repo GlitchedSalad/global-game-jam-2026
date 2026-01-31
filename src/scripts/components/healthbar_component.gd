@@ -26,8 +26,8 @@ func _draw() -> void:
 	var bg_color = Color(0.2, 0.2, 0.2)
 	var fg_color = Color(1.0, 0.0, 0.0)
 	
-	draw_rect(Rect2(Vector2(0, 0), Vector2(width, height)), bg_color)
-	draw_rect(Rect2(Vector2(0, 0), Vector2(width * health_percent, height)), fg_color)
+	draw_rect(Rect2(Vector2(-width / 2, 0), Vector2(width, height)), bg_color)
+	draw_rect(Rect2(Vector2(-width / 2, 0), Vector2(width * health_percent, height)), fg_color)
 
 func _on_health_changed():
 	queue_redraw()
