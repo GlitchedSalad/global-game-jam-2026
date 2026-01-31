@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bsrrc4tvxcgr" path="res://src/scripts/entities/player_character.gd" id="1_848is"]
 [ext_resource type="PackedScene" uid="uid://bqv7bi33vhg54" path="res://src/scenes/components/healthBarComponent.tscn" id="2_7n545"]
+[ext_resource type="Script" uid="uid://bdguto2ugo48l" path="res://src/scripts/components/masks/mask_base.gd" id="2_l51fx"]
 [ext_resource type="PackedScene" path="res://src/scenes/components/healthComponent.tscn" id="3_hon5w"]
 [ext_resource type="PackedScene" uid="uid://befu18jlyojfb" path="res://src/scenes/components/hitboxComponent.tscn" id="4_66fhx"]
 [ext_resource type="PackedScene" uid="uid://bbpjtemgku5av" path="res://src/scenes/components/player_controller.tscn" id="5_8voux"]
@@ -11,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://dlth7b56uyqwj" path="res://src/assets/temp_art/tile_0085.png" id="9_66fhx"]
 [ext_resource type="PackedScene" uid="uid://2fb1k7sjbmm5" path="res://src/scenes/components/magnet.tscn" id="10_8voux"]
 
+[sub_resource type="Resource" id="Resource_lf6sb"]
+script = ExtResource("2_l51fx")
+metadata/_custom_type_script = "uid://bdguto2ugo48l"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_66fhx"]
 radius = 37.01351
 
@@ -19,6 +24,7 @@ radius = 52.153618
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=1823924956]
 script = ExtResource("1_848is")
+equipped_mask = SubResource("Resource_lf6sb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1639054082]
 shape = SubResource("CircleShape2D_66fhx")

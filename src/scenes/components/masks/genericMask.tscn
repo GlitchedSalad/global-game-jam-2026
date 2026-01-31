@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b7rffbrke8tyo"]
+
+[ext_resource type="Script" uid="uid://bdguto2ugo48l" path="res://src/scripts/components/masks/mask_base.gd" id="1_bohqq"]
+[ext_resource type="PackedScene" uid="uid://ctqv67h2ts1qf" path="res://src/scenes/entities/attacks/mask generic attack.tscn" id="2_7dkkn"]
+
+[node name="GenericMask" type="Node2D" unique_id=1747312554]
+script = ExtResource("1_bohqq")
+special_attack = ExtResource("2_7dkkn")
+
+[node name="MaskGenericAttack" parent="." unique_id=2052013419 instance=ExtResource("2_7dkkn")]
