@@ -14,4 +14,3 @@ func _process(delta: float) -> void:
 	direction.y = Input.get_axis("Up","Down")
 	direction.x = Input.get_axis("Left","Right")
 	emit_signal("move", speed * direction * delta)
-
