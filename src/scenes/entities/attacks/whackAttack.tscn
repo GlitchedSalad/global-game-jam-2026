@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/scripts/entities/attacks/whack_attack.gd" id="1_7fsew"]
 [ext_resource type="Texture2D" uid="uid://cwshrasc6vrjk" path="res://src/assets/Particle FX/Dust_02.png" id="2_aafby"]
-[ext_resource type="PackedScene" path="res://src/scenes/components/hurtboxComponent.tscn" id="3_vnpfi"]
+[ext_resource type="PackedScene" uid="uid://bys6hebroqph3" path="res://src/scenes/components/hurtboxComponent.tscn" id="3_vnpfi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gilyp"]
 atlas = ExtResource("2_aafby")
@@ -97,6 +97,8 @@ frame = 10
 frame_progress = 1.0
 
 [node name="HurtboxComponent" parent="." unique_id=751094630 instance=ExtResource("3_vnpfi")]
+collision_layer = 2
+collision_mask = 2
 damage_amount = 20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=717068897]

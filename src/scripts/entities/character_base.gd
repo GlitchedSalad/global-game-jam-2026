@@ -11,6 +11,7 @@ var attack2
 var special
 var shield
 
+var can_act: bool = true
 var direction: Vector2
 var hit_layers: Array[int] = [0]
 var attack_layers: Array[int] = [1]
@@ -59,26 +60,32 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _on_controller_move(vec : Vector2):
+	if (!can_act): return
 	velocity = vec
 	if vec.length() > 0 : 
 		direction = vec
 
 func _on_attack1():
+	if (!can_act): return
 	attack1.attack(direction, attack_layers)
 
 func _on_attack2():
+	if (!can_act): return
 	attack2.attack(direction, attack_layers)
 
 func _on_special():
+	if (!can_act): return
 	special.attack(direction, attack_layers)
 
 func _on_shield():
+	if (!can_act): return
 	pass
 
 func _on_health_depleted():
-	#print("health gone")
-	pass
+	can_act = false
+	velocity = Vector2.ZERO
+	if (death is DeathComponent):
+		death.die()
 
 func _on_died():
-	#print("died")
-	pass
+	queue_free()
