@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@export var speed := 100.0
+@export var speed := 60.0
 @export var attack_time := 0.2
 @export var min_attack_distance := 100.0
 var direction : Vector2

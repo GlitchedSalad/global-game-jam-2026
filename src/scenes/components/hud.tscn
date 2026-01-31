@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://degqe15fqcd77"]
 
 [ext_resource type="Script" uid="uid://dlwicvqubsoc7" path="res://src/scripts/components/hud.gd" id="1_ljdyf"]
+[ext_resource type="Script" uid="uid://bam0a055xrokt" path="res://src/scripts/components/fps.gd" id="2_2sykr"]
 
 [node name="HUD" type="CanvasLayer" unique_id=30475843]
 script = ExtResource("1_ljdyf")
@@ -35,3 +36,8 @@ offset_right = -412.0
 offset_bottom = 27.0
 grow_horizontal = 2
 text = "Health:"
+
+[node name="FPS" type="Label" parent="." unique_id=9162067]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_2sykr")

@@ -6,13 +6,14 @@ extends Node2D
 @export var ranged_enemy : PackedScene
 
 var players : Array
-var spawn_time := 3.0
+var spawn_wave_time := 10.0
+var spawn_offset := 0.5
 var spawn_amount := 5
 var spawn_radius := 1000.0
 
 func _ready() -> void:
 	players = get_tree().get_nodes_in_group("player")
-	timer.wait_time = spawn_time
+	timer.wait_time = spawn_wave_time
 	timer.start()
 	timer.timeout.connect(_on_spawn_timer)
 
@@ -30,4 +31,5 @@ func _on_spawn_timer():
 		
 		new_enemy.global_position = target.global_position + Vector2(spawn_radius, 0).rotated(randf_range(0, 2 * PI))
 		get_tree().root.add_child.call_deferred(new_enemy)
+		await get_tree().create_timer(spawn_offset).timeout
 	
