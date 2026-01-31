@@ -3,10 +3,17 @@
 [ext_resource type="Script" uid="uid://dddji48kx5pfx" path="res://src/scripts/entities/character_base.gd" id="1_a2hju"]
 [ext_resource type="Texture2D" uid="uid://drlxy23yxwhv3" path="res://src/assets/temp_art/tile_0122.png" id="2_u62bl"]
 [ext_resource type="PackedScene" uid="uid://bd7qh1svr4ggi" path="res://src/scenes/entities/attacks/whackAttack.tscn" id="4_u62bl"]
+[ext_resource type="PackedScene" uid="uid://bjf0ikgfprwt7" path="res://src/scenes/components/healthComponent.tscn" id="5_s0pi5"]
+[ext_resource type="PackedScene" uid="uid://bqv7bi33vhg54" path="res://src/scenes/components/healthBarComponent.tscn" id="6_1r8ib"]
 [ext_resource type="PackedScene" uid="uid://cnjjrpxub3wog" path="res://src/scenes/components/simple_enemy_controller.tscn" id="6_2a5gd"]
+[ext_resource type="PackedScene" uid="uid://befu18jlyojfb" path="res://src/scenes/components/hitboxComponent.tscn" id="7_5cxla"]
+[ext_resource type="PackedScene" uid="uid://b8o8cp57cfmr7" path="res://src/scenes/components/simpleEnemyDeathComponent.tscn" id="8_2a5gd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u62bl"]
 radius = 9.219544
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kcb5j"]
+radius = 35.0
 
 [node name="MeleeEnemy" type="CharacterBody2D" unique_id=1197232999]
 motion_mode = 1
@@ -22,3 +29,16 @@ texture = ExtResource("2_u62bl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1465174274]
 shape = SubResource("CircleShape2D_u62bl")
+
+[node name="HealthComponent" parent="." unique_id=530295951 instance=ExtResource("5_s0pi5")]
+
+[node name="HealthBarComponent" parent="." unique_id=1034124488 node_paths=PackedStringArray("health_component") instance=ExtResource("6_1r8ib")]
+health_component = NodePath("../HealthComponent")
+
+[node name="HitboxComponent" parent="." unique_id=1013292098 node_paths=PackedStringArray("health_component") instance=ExtResource("7_5cxla")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1664946553]
+shape = SubResource("CircleShape2D_kcb5j")
+
+[node name="DeathComponent" parent="." unique_id=1782825441 instance=ExtResource("8_2a5gd")]
