@@ -11,11 +11,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bmaf"]
 size = Vector2(64, 63)
 
-[node name="RangedEnemy" type="Node2D" unique_id=817956454 node_paths=PackedStringArray("controller", "attack1", "attack2")]
+[node name="RangedEnemy" type="Node2D" unique_id=817956454]
 script = ExtResource("1_7yu57")
-controller = NodePath("CharController")
-attack1 = NodePath("Attack1")
-attack2 = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=906442416]
 texture = ExtResource("2_1w4gr")
@@ -32,8 +29,6 @@ vframes = 2
 health_component = NodePath("../HealthComponent")
 
 [node name="HitboxComponent" parent="." unique_id=1013292098 node_paths=PackedStringArray("health_component") instance=ExtResource("9_yefal")]
-collision_layer = 2
-collision_mask = 2
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=2099628218]
