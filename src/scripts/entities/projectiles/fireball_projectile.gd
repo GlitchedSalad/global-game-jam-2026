@@ -8,20 +8,20 @@ var hitEffect: GPUParticles2D
 var lifeTimer:= Timer.new()
 var sprite: AnimatedSprite2D
 
-func initialize(direction: Vector2, position: Vector2) -> void:
+func initialize(_direction: Vector2, _position: Vector2) -> void:
 	sprite = get_node("Sprite2D")
 	hurtbox = get_node("HurtboxComponent")
 	hurtbox.hurtbox_hit.connect(_on_hurtbox_hit)
 	hitEffect = get_node("HitEffect")
-	self.position = position
-	self.direction = direction.normalized()
+	self.position = _position
+	self.direction = _direction.normalized()
 	lifeTimer.wait_time = 3.0
 	lifeTimer.one_shot = true
 	lifeTimer.timeout.connect(queue_free)
 	add_child(lifeTimer)
 	lifeTimer.autostart = true
 	sprite.play()
-	sprite.rotation = direction.angle()
+	sprite.rotation = _direction.angle()
 	
 
 func _process(delta: float) -> void:

@@ -8,6 +8,10 @@ extends Node2D
 var direction : Vector2
 
 signal move(value : Vector2)
+signal shield
+signal attack1
+signal attack2
+signal special
 
 func _ready() -> void:
 	if (player == null):

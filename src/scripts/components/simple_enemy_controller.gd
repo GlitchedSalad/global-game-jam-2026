@@ -6,6 +6,10 @@ extends Node2D
 var direction : Vector2
 
 signal move(value : Vector2)
+signal shield
+signal attack1
+signal attack2
+signal special
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
