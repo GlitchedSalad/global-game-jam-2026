@@ -18,6 +18,3 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("G"):
 		emit_signal("shield")
-
-
-
