@@ -1,11 +1,34 @@
-extends Node
+class_name HealthComponent extends Node
 
+@export var max_health : float
+var current_health : float
 
-# Called when the node enters the scene tree for the first time.
+signal health_depleted
+signal health_changed()
+
 func _ready() -> void:
-	pass # Replace with function body.
+	set_current_health(max_health)
 
+func set_current_health(amount : float) -> void:
+	current_health = amount
+	clampf(current_health, 0, max_health)
+	health_changed.emit()
+	
+func set_max_health(amount: float, full: bool) -> void:
+	max_health = maxf(1.0, amount)
+	if (full):
+		set_current_health(max_health)
+	health_changed.emit()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func remove_health(amount : float) -> void:
+	current_health -= amount
+	if (current_health <= 0):
+		health_depleted.emit()
+	clampf(current_health, 0, max_health)
+	health_changed.emit()
+
+func add_health(amount : float) -> void:
+	current_health += amount
+	clampf(current_health, 0, max_health)
+	health_changed.emit()
+	
