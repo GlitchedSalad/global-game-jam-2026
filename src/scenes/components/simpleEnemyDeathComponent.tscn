@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b8o8cp57cfmr7"]
+
+[ext_resource type="Script" uid="uid://cfpdaij5rj82r" path="res://src/scripts/components/simple_enemy_death_component.gd" id="1_1obka"]
+
+[node name="SimpleEnemyDeathComponent" type="Node2D" unique_id=1782825441]
+script = ExtResource("1_1obka")
