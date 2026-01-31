@@ -1,18 +1,47 @@
-[gd_scene format=3 uid="uid://cr1s0phlto602"]
+[gd_scene format=3 uid="uid://c7rbpfevmflih"]
 
 [ext_resource type="Texture2D" uid="uid://cng1c7pw5d1x8" path="res://src/assets/temp_art/tile_0109.png" id="1_8epch"]
-[ext_resource type="PackedScene" uid="uid://buab1s1xsgvjv" path="res://src/scenes/entities/attacks/tank_attack.tscn" id="2_f3f4r"]
+[ext_resource type="Script" uid="uid://dddji48kx5pfx" path="res://src/scripts/entities/character_base.gd" id="1_vul6t"]
+[ext_resource type="PackedScene" uid="uid://cphefys7q21wu" path="res://src/scenes/entities/attacks/tank_attack.tscn" id="2_f3f4r"]
+[ext_resource type="PackedScene" uid="uid://lasgiphemqpb" path="res://src/scenes/components/tank_enemy_controller.tscn" id="3_vul6t"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/healthComponent.tscn" id="5_6j76j"]
+[ext_resource type="PackedScene" uid="uid://cq1u650n0o22j" path="res://src/scenes/entities/attacks/multiFireballAttack.tscn" id="5_7atr5"]
+[ext_resource type="PackedScene" uid="uid://bqv7bi33vhg54" path="res://src/scenes/components/healthBarComponent.tscn" id="6_davqp"]
+[ext_resource type="PackedScene" uid="uid://befu18jlyojfb" path="res://src/scenes/components/hitboxComponent.tscn" id="7_davqp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f3f4r"]
 radius = 60.133186
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7atr5"]
+size = Vector2(84, 75)
+
 [node name="TankEnemy" type="CharacterBody2D" unique_id=1808236991]
+motion_mode = 1
+script = ExtResource("1_vul6t")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1317258878]
 scale = Vector2(10, 10)
 texture = ExtResource("1_8epch")
 
+[node name="CharController" parent="." unique_id=934956408 instance=ExtResource("3_vul6t")]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=313251988]
 shape = SubResource("CircleShape2D_f3f4r")
 
-[node name="TankAttack" parent="." unique_id=1977634904 instance=ExtResource("2_f3f4r")]
+[node name="Attack1" parent="." unique_id=1977634904 instance=ExtResource("2_f3f4r")]
+
+[node name="Attack2" parent="." unique_id=1217824823 instance=ExtResource("5_7atr5")]
+fireball_number = 16
+
+[node name="HealthComponent" parent="." unique_id=530295951 instance=ExtResource("5_6j76j")]
+max_health = 1000.0
+
+[node name="HealthBarComponent" parent="." unique_id=1034124488 node_paths=PackedStringArray("health_component") instance=ExtResource("6_davqp")]
+health_component = NodePath("../HealthComponent")
+
+[node name="HitboxComponent" parent="." unique_id=1013292098 node_paths=PackedStringArray("health_component") instance=ExtResource("7_davqp")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1134867490]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_7atr5")
