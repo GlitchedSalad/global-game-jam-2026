@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://buab1s1xsgvjv"]
+
+[ext_resource type="Script" uid="uid://ccyuk0qnecsks" path="res://src/scripts/entities/attacks/tank_attack.gd" id="1_7w5wm"]
+[ext_resource type="PackedScene" path="res://src/scenes/entities/projectileSpawner.tscn" id="2_8mof7"]
+[ext_resource type="PackedScene" uid="uid://dkxo36e51w840" path="res://src/scenes/entities/projectiles/tank_projectile.tscn" id="3_x6vtr"]
+
+[node name="TankAttack" type="Node2D" unique_id=1977634904]
+script = ExtResource("1_7w5wm")
+
+[node name="ProjectileSpawner" parent="." unique_id=1217009242 instance=ExtResource("2_8mof7")]
+ProjectileScene = ExtResource("3_x6vtr")

@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://b1tpjsk4yb3br"]
 
 [ext_resource type="Script" uid="uid://dnn805xcmj0l8" path="res://src/scripts/level/main.gd" id="1_0s8lj"]
-[ext_resource type="PackedScene" uid="uid://b2qjcssc3mi5h" path="res://src/scenes/level/layer_holder.tscn" id="2_awelt"]
+[ext_resource type="PackedScene" path="res://src/scenes/level/layer_holder.tscn" id="2_awelt"]
 [ext_resource type="PackedScene" uid="uid://dbheax1kx27dy" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
 [ext_resource type="PackedScene" uid="uid://cfl6rcjkfgn62" path="res://src/scenes/entities/PlayerCharacter.tscn" id="5_spl18"]
 [ext_resource type="PackedScene" uid="uid://degqe15fqcd77" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
+[ext_resource type="PackedScene" uid="uid://cr1s0phlto602" path="res://src/scenes/entities/enemies/tank_enemy.tscn" id="8_6omyi"]
 [ext_resource type="PackedScene" uid="uid://cb8m2kmr8g1dy" path="res://src/scenes/entities/enemies/ranged_enemy.tscn" id="9_pftw2"]
 [ext_resource type="PackedScene" uid="uid://ccoduerdxk5ew" path="res://src/scenes/entities/enemies/melee_enemy.tscn" id="14_yqvjp"]
 
@@ -27,5 +28,10 @@ position = Vector2(120, 0)
 [node name="HUD" parent="." unique_id=30475843 instance=ExtResource("6_srwyl")]
 
 [node name="MeleeEnemy" parent="." unique_id=328401243 instance=ExtResource("14_yqvjp")]
+position = Vector2(248, -189)
 
 [node name="RangedEnemy" parent="." unique_id=817956454 instance=ExtResource("9_pftw2")]
+position = Vector2(297, 229)
+
+[node name="TankEnemy" parent="." unique_id=1808236991 instance=ExtResource("8_6omyi")]
+position = Vector2(-398, -138)

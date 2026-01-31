@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://dkxo36e51w840"]
+
+[ext_resource type="Texture2D" uid="uid://njicgkny7rm8" path="res://src/assets/Particle FX/Explosion_02.png" id="1_t66pj"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/hurtboxComponent.tscn" id="2_vqtul"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idrys"]
+atlas = ExtResource("1_t66pj")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww8g0"]
+atlas = ExtResource("1_t66pj")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yice"]
+atlas = ExtResource("1_t66pj")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxsro"]
+atlas = ExtResource("1_t66pj")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05ao1"]
+atlas = ExtResource("1_t66pj")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_keplh"]
+atlas = ExtResource("1_t66pj")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x0c1"]
+atlas = ExtResource("1_t66pj")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o8ev"]
+atlas = ExtResource("1_t66pj")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0g50"]
+atlas = ExtResource("1_t66pj")
+region = Rect2(1536, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u2g2"]
+atlas = ExtResource("1_t66pj")
+region = Rect2(1728, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flos5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idrys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww8g0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yice")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxsro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05ao1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_keplh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x0c1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o8ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0g50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u2g2")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kaxfu"]
+radius = 30.016663
+
+[node name="TankProjectile" type="Node2D" unique_id=827886739]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=939514497]
+sprite_frames = SubResource("SpriteFrames_flos5")
+
+[node name="HurtboxComponent" parent="." unique_id=751094630 instance=ExtResource("2_vqtul")]
+damage_amount = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1714987156]
+shape = SubResource("CircleShape2D_kaxfu")
