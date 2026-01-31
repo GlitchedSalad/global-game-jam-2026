@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bwfosfs2nwmen"]
+
+[ext_resource type="Script" uid="uid://bscvmoxwqqgjp" path="res://src/scripts/components/player_death_component.gd" id="1_4fgcg"]
+
+[node name="PlayerDeathComponent" type="Node2D" unique_id=1371335719]
+script = ExtResource("1_4fgcg")
