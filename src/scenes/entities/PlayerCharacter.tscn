@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cfl6rcjkfgn62"]
+[gd_scene format=3 uid="uid://oh4agkwg28sb"]
 
 [ext_resource type="Script" uid="uid://bsrrc4tvxcgr" path="res://src/scripts/entities/player_character.gd" id="1_848is"]
 [ext_resource type="PackedScene" path="res://src/scenes/components/healthBarComponent.tscn" id="2_7n545"]
@@ -47,8 +47,5 @@ shape = SubResource("CircleShape2D_hon5w")
 [node name="ProjectileSpawner" parent="Attack1" unique_id=1217009242 instance=ExtResource("8_8voux")]
 ProjectileScene = ExtResource("9_l51fx")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=561554636]
-texture = ExtResource("8_hon5w")
-hframes = 2
-vframes = 2
-frame = 2
+[node name="Attack2" parent="." unique_id=1544179487 instance=ExtResource("11_l51fx")]
+scale = Vector2(2.91, 2.91)
