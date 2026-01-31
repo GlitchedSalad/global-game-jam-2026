@@ -44,7 +44,8 @@ shape = SubResource("CircleShape2D_hon5w")
 
 [node name="Attack1" parent="." unique_id=367342759 instance=ExtResource("7_lf6sb")]
 
-[node name="Attack2" parent="." unique_id=1217824823 instance=ExtResource("8_66fhx")]
+[node name="ProjectileSpawner" parent="Attack1" unique_id=1217009242 instance=ExtResource("8_8voux")]
+ProjectileScene = ExtResource("9_l51fx")
 
 [node name="Attack2" parent="." unique_id=1544179487 instance=ExtResource("11_l51fx")]
 scale = Vector2(2.91, 2.91)
