@@ -18,3 +18,7 @@ func _on_controller_move(vec : Vector2):
 func _on_controller_shield():
 	print("shield.do_something")
 	pass
+
+func add_xp(xp: int):
+	print("add me some xp")
+	pass
