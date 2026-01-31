@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b1tpjsk4yb3br"]
+
+[ext_resource type="Script" uid="uid://dnn805xcmj0l8" path="res://src/scripts/level/main.gd" id="1_0s8lj"]
+[ext_resource type="PackedScene" uid="uid://s8dc0iq28nca" path="res://src/scenes/entities/character_base.tscn" id="2_2couc"]
+[ext_resource type="PackedScene" uid="uid://bbpjtemgku5av" path="res://src/scenes/components/player_controller.tscn" id="3_8c177"]
+[ext_resource type="Texture2D" uid="uid://c2tos1omse0cv" path="res://icon.svg" id="4_srwyl"]
+
+[node name="Main" type="Node2D" unique_id=64097844]
+script = ExtResource("1_0s8lj")
+
+[node name="CharacterBase" parent="." unique_id=2023623591 node_paths=PackedStringArray("controller") instance=ExtResource("2_2couc")]
+controller = NodePath("PlayerController")
+
+[node name="PlayerController" parent="CharacterBase" unique_id=823443357 instance=ExtResource("3_8c177")]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBase" unique_id=1562280727]
+texture = ExtResource("4_srwyl")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1035244976]

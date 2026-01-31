@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://balulasmywohy"]
+
+[ext_resource type="Script" uid="uid://un42u6gxggwx" path="res://src/scripts/level/menu.gd" id="1_723xx"]
+
+[node name="Menu" type="Node2D" unique_id=2117340042]
+script = ExtResource("1_723xx")
