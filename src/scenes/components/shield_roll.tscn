@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c1uypvlfpwaef"]
+
+[ext_resource type="Script" uid="uid://ddic34sjx46xj" path="res://src/scripts/components/shield_roll.gd" id="1_n846t"]
+
+[node name="ShieldRoll" type="Node" unique_id=966327072]
+script = ExtResource("1_n846t")
