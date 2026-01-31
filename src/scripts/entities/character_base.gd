@@ -39,7 +39,10 @@ func _ready() -> void:
 	death = get_node_or_null("DeathComponent")
 	if (death is DeathComponent):
 		death.died.connect(_on_died)
-	
+	setup_listeners()
+
+
+func setup_listeners() -> void:
 	attack1 = get_node_or_null("Attack1")
 	if (attack1 is Attack):
 		controller.attack1.connect(_on_attack1)
