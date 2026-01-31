@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://du6cu4tylxi5q" path="res://src/assets/Terrain/Tileset/Tilemap_color1.png" id="2_8c177"]
 [ext_resource type="Texture2D" uid="uid://cb87npg0knyh0" path="res://src/assets/Terrain/Resources/Wood/Trees/Tree1.png" id="3_awelt"]
 [ext_resource type="Script" path="res://src/scenes/level/tree_gen.gd" id="4_6omyi"]
-[ext_resource type="PackedScene" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
+[ext_resource type="PackedScene" uid="uid://dbheax1kx27dy" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
 [ext_resource type="PackedScene" uid="uid://cfl6rcjkfgn62" path="res://src/scenes/entities/PlayerCharacter.tscn" id="5_spl18"]
-[ext_resource type="PackedScene" uid="uid://dcdntvpo1nj4i" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
+[ext_resource type="PackedScene" uid="uid://degqe15fqcd77" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
 [ext_resource type="PackedScene" uid="uid://cb8m2kmr8g1dy" path="res://src/scenes/entities/enemies/ranged_enemy.tscn" id="9_pftw2"]
 [ext_resource type="PackedScene" uid="uid://ccoduerdxk5ew" path="res://src/scenes/entities/enemies/melee_enemy.tscn" id="14_yqvjp"]
 
@@ -601,6 +601,9 @@ script = ExtResource("4_6omyi")
 
 [node name="pickup" parent="." unique_id=539630175 instance=ExtResource("5_8c177")]
 position = Vector2(120, 0)
+
+[node name="pickup2" parent="." unique_id=1301690848 instance=ExtResource("5_8c177")]
+position = Vector2(400, 0)
 
 [node name="HUD" parent="." unique_id=30475843 instance=ExtResource("6_srwyl")]
 
