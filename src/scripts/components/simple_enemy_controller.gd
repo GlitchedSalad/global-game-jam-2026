@@ -19,6 +19,3 @@ func _process(delta: float) -> void:
 
 	direction = global_position.direction_to(player.global_position)
 	emit_signal("move", direction * speed * delta)
-
-
-
