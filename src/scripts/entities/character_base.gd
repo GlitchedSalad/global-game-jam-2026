@@ -1,5 +1,5 @@
 class_name CharacterBase
-extends Node2D
+extends CharacterBody2D
 
 var controller : Node
 var health: HealthComponent
@@ -55,8 +55,11 @@ func _ready() -> void:
 	if (shield is Attack):
 		controller.shield.connect(_on_shield)
 
+func _physics_process(delta: float) -> void:
+	move_and_slide()
+
 func _on_controller_move(vec : Vector2):
-	global_position += vec
+	velocity = vec
 	if vec.length() > 0 : 
 		direction = vec
 

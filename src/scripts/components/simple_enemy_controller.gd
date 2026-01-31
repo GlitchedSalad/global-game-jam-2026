@@ -25,7 +25,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	direction = global_position.direction_to(players[0].global_position)
-	emit_signal("move", direction * speed * delta)
+	emit_signal("move", direction * speed)
 
 
 

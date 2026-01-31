@@ -5,7 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bd7qh1svr4ggi" path="res://src/scenes/entities/attacks/whackAttack.tscn" id="4_u62bl"]
 [ext_resource type="PackedScene" uid="uid://cnjjrpxub3wog" path="res://src/scenes/components/simple_enemy_controller.tscn" id="6_2a5gd"]
 
-[node name="MeleeEnemy" type="Node2D" unique_id=328401243]
+[sub_resource type="CircleShape2D" id="CircleShape2D_u62bl"]
+radius = 9.219544
+
+[node name="MeleeEnemy" type="CharacterBody2D" unique_id=1197232999]
+motion_mode = 1
 script = ExtResource("1_a2hju")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=72419628]
@@ -15,3 +19,6 @@ texture = ExtResource("2_u62bl")
 [node name="CharController" parent="." unique_id=589336082 instance=ExtResource("6_2a5gd")]
 
 [node name="Attack1" parent="." unique_id=1544179487 instance=ExtResource("4_u62bl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1465174274]
+shape = SubResource("CircleShape2D_u62bl")

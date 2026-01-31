@@ -6,12 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://d2gum0xjqtefg" path="res://src/scenes/components/simple_ranged_enemy_controller.tscn" id="6_yefal"]
 [ext_resource type="PackedScene" path="res://src/scenes/components/healthComponent.tscn" id="7_xbd8t"]
 [ext_resource type="PackedScene" uid="uid://bqv7bi33vhg54" path="res://src/scenes/components/healthBarComponent.tscn" id="8_mbj6v"]
-[ext_resource type="PackedScene" path="res://src/scenes/components/hitboxComponent.tscn" id="9_yefal"]
+[ext_resource type="PackedScene" uid="uid://befu18jlyojfb" path="res://src/scenes/components/hitboxComponent.tscn" id="9_yefal"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bmaf"]
 size = Vector2(64, 63)
 
-[node name="RangedEnemy" type="Node2D" unique_id=817956454]
+[sub_resource type="CircleShape2D" id="CircleShape2D_1w4gr"]
+radius = 12.0415945
+
+[node name="RangedEnemy" type="CharacterBody2D" unique_id=701363966]
+motion_mode = 1
 script = ExtResource("1_7yu57")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=906442416]
@@ -33,3 +37,6 @@ health_component = NodePath("../HealthComponent")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=2099628218]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_5bmaf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=609161959]
+shape = SubResource("CircleShape2D_1w4gr")
