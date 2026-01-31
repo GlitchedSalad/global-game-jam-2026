@@ -1,51 +1,92 @@
 [gd_scene format=3 uid="uid://balulasmywohy"]
 
 [ext_resource type="Script" uid="uid://un42u6gxggwx" path="res://src/scripts/level/menu.gd" id="1_723xx"]
+[ext_resource type="Texture2D" uid="uid://ds106gal27qnb" path="res://src/assets/game_screenshot.png" id="2_kfrlc"]
+[ext_resource type="Script" uid="uid://byuya1tpo8hci" path="res://src/scenes/level/menu_bg.gd" id="3_yivyi"]
+[ext_resource type="Theme" uid="uid://hnq8vcwfawna" path="res://src/scenes/level/button_theme.tres" id="4_1qfrk"]
+[ext_resource type="Texture2D" uid="uid://cj3gci1dlnwgg" path="res://src/assets/title.png" id="4_yivyi"]
 
 [node name="Menu" type="Node2D" unique_id=2117340042]
 script = ExtResource("1_723xx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=933917669]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=2077004394]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=415492726]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -280.303
-offset_top = -185.0
-offset_right = 280.30298
-offset_bottom = 185.0
+offset_left = -1096.3544
+offset_top = -734.0
+offset_right = 1096.3545
+offset_bottom = 734.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kfrlc")
+script = ExtResource("3_yivyi")
+
+[node name="Title" type="TextureRect" parent="CanvasLayer/TextureRect" unique_id=56619580]
+layout_mode = 0
+offset_left = 434.35437
+offset_top = 310.0
+offset_right = 1213.3544
+offset_bottom = 783.0
+scale = Vector2(1.9778012, 1.9778013)
+texture = ExtResource("4_yivyi")
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=712551477]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 343.0
+offset_right = 20.0
+offset_bottom = 383.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=2077004394]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -50.0
+offset_right = 400.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Title" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1767982529]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer" unique_id=372390195]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Masked Rogue"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=372390195]
-layout_mode = 2
+size_flags_vertical = 3
 alignment = 1
 
-[node name="PlayButton" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=1365747607]
+[node name="PlayButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1365747607]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_1qfrk")
 text = "Play"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=1830654802]
+[node name="QuitButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1830654802]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_1qfrk")
 text = "Quit"
 
-[node name="HelpButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1537824816]
+[node name="HelpButton" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1537824816]
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_1qfrk")
 text = "How to play"
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/HelpButton" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/HelpButton" to="." method="_on_help_button_pressed"]
