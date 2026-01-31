@@ -6,16 +6,25 @@
 [ext_resource type="Texture2D" uid="uid://c2tos1omse0cv" path="res://icon.svg" id="4_srwyl"]
 [ext_resource type="PackedScene" uid="uid://donyveyjvxmnm" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8c177"]
+size = Vector2(129, 129)
+
 [node name="Main" type="Node2D" unique_id=64097844]
 script = ExtResource("1_0s8lj")
 
-[node name="CharacterBase" parent="." unique_id=2023623591 node_paths=PackedStringArray("controller") instance=ExtResource("2_2couc")]
+[node name="CharacterBase" parent="." unique_id=2023623591 node_paths=PackedStringArray("controller") groups=["player"] instance=ExtResource("2_2couc")]
 controller = NodePath("PlayerController")
 
 [node name="PlayerController" parent="CharacterBase" unique_id=823443357 instance=ExtResource("3_8c177")]
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBase" unique_id=1562280727]
 texture = ExtResource("4_srwyl")
+
+[node name="Area2D" type="Area2D" parent="CharacterBase" unique_id=1955629904 groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBase/Area2D" unique_id=557803962]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_8c177")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1035244976]
 
