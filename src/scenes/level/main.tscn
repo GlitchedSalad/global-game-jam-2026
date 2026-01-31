@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://s8dc0iq28nca" path="res://src/scenes/entities/character_base.tscn" id="2_2couc"]
 [ext_resource type="PackedScene" uid="uid://bbpjtemgku5av" path="res://src/scenes/components/player_controller.tscn" id="3_8c177"]
 [ext_resource type="Texture2D" uid="uid://c2tos1omse0cv" path="res://icon.svg" id="4_srwyl"]
-[ext_resource type="PackedScene" uid="uid://dbheax1kx27dy" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
+[ext_resource type="PackedScene" path="res://src/scenes/entities/pickup.tscn" id="5_8c177"]
+[ext_resource type="PackedScene" uid="uid://dcdntvpo1nj4i" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8c177"]
 size = Vector2(129, 129)
@@ -30,3 +31,5 @@ shape = SubResource("RectangleShape2D_8c177")
 
 [node name="pickup" parent="." unique_id=539630175 instance=ExtResource("5_8c177")]
 position = Vector2(120, 0)
+
+[node name="HUD" parent="." unique_id=30475843 instance=ExtResource("6_srwyl")]
