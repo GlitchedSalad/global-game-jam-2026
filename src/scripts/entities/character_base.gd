@@ -17,6 +17,7 @@ func _ready() -> void:
 	health = get_node_or_null("HealthComponent")
 	if (health is HealthComponent):
 		health.health_depleted.connect(_on_health_depleted)
+		health.health_changed.connect(_on_health_changed)
 
 func _on_controller_move(vec : Vector2):
 	global_position += vec
@@ -28,3 +29,6 @@ func _on_attack1():
 	
 func _on_health_depleted():
 	print("dead")
+
+func _on_health_changed(health: int):
+	print(health)
