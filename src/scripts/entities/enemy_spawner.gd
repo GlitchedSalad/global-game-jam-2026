@@ -4,6 +4,7 @@ extends Node2D
 
 @export var melee_enemy : PackedScene
 @export var ranged_enemy : PackedScene
+@export var exploding_enemy : PackedScene
 @export var tank_enemy : PackedScene
 @export var bounds_min: Vector2 = Vector2(-960, -540)
 @export var bounds_max: Vector2 = Vector2( 960,  540)
