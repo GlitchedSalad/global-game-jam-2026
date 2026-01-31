@@ -13,6 +13,7 @@ var difficulty: float = 1.0
 @export var difficulty_growth_per_sec: float = 0.02
 @export var difficulty_cap: float = 30.0
 
+signal difficulty_changed
 signal points_changed
 signal player_1_health_change
 signal player_2_health_change
@@ -39,16 +40,23 @@ func update_health_2(health : int):
 
 func _process(delta: float) -> void:
 	run_time += delta
+
 	var new_difficulty: float = min(
-	difficulty_start + run_time * difficulty_growth_per_sec,
-	difficulty_cap
-)
-#Only emit when it actually changes enough to matter (prevents spam)
-	if abs(new_difficulty - difficulty) >= 0.01:
+		difficulty_start + (run_time * difficulty_growth_per_sec),
+		difficulty_cap
+	)
+
+	if new_difficulty != difficulty:
 		difficulty = new_difficulty
-		emit_signal("difficulty_changed")
+		difficulty_changed.emit()
+
+	# DEBUG: print once per second
+	if int(run_time) % 1 == 0 and absf(fmod(run_time, 1.0)) < 0.02:
+		print("t=", snapped(run_time, 0.1), " diff=", snapped(difficulty, 0.01))
 func get_difficulty() -> float:
 	return difficulty
+
+
 
 # Global functions
 

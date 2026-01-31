@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b1tpjsk4yb3br"]
+[gd_scene format=3 uid="uid://cc8sprxbralhd"]
 
 [ext_resource type="Script" uid="uid://dnn805xcmj0l8" path="res://src/scripts/level/main.gd" id="1_0s8lj"]
 [ext_resource type="PackedScene" uid="uid://b2qjcssc3mi5h" path="res://src/scenes/level/layer_holder.tscn" id="2_awelt"]
@@ -6,9 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cfl6rcjkfgn62" path="res://src/scenes/entities/PlayerCharacter.tscn" id="5_spl18"]
 [ext_resource type="PackedScene" uid="uid://bf1371i5sm82g" path="res://src/scenes/entities/enemy_spawner.tscn" id="6_6omyi"]
 [ext_resource type="PackedScene" uid="uid://degqe15fqcd77" path="res://src/scenes/components/hud.tscn" id="6_srwyl"]
-[ext_resource type="PackedScene" uid="uid://burlmjk5e0us" path="res://src/scenes/entities/enemies/explodingEnemy.tscn" id="8_6omyi"]
-[ext_resource type="PackedScene" uid="uid://cb8m2kmr8g1dy" path="res://src/scenes/entities/enemies/ranged_enemy.tscn" id="9_pftw2"]
-[ext_resource type="PackedScene" uid="uid://ccoduerdxk5ew" path="res://src/scenes/entities/enemies/melee_enemy.tscn" id="14_yqvjp"]
 
 [node name="Main" type="Node2D" unique_id=64097844]
 script = ExtResource("1_0s8lj")
@@ -29,12 +26,3 @@ position = Vector2(120, 0)
 [node name="HUD" parent="." unique_id=30475843 instance=ExtResource("6_srwyl")]
 
 [node name="EnemySpawner" parent="." unique_id=79452690 instance=ExtResource("6_6omyi")]
-
-[node name="MeleeEnemy" parent="." unique_id=328401243 instance=ExtResource("14_yqvjp")]
-position = Vector2(324, 0)
-
-[node name="RangedEnemy" parent="." unique_id=817956454 instance=ExtResource("9_pftw2")]
-position = Vector2(-282, 0)
-
-[node name="ExplodingEnemy" parent="." unique_id=1919042887 instance=ExtResource("8_6omyi")]
-position = Vector2(0, 275)
