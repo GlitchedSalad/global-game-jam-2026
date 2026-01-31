@@ -14,8 +14,8 @@ func _ready() -> void:
 
 func _on_controller_move(vec : Vector2):
 	global_position += vec
-	direction = vec
+	if vec.length() > 0 : 
+		direction = vec
 
 func _on_attack1():
 	attack1.attack(direction)
-	print(direction)

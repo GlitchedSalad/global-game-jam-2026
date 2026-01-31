@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d30n4ekrlj8hn" path="res://src/scripts/entities/projectiles/fireball_projectile.gd" id="1_t34b3"]
 [ext_resource type="Texture2D" uid="uid://v48c6hks3uct" path="res://src/assets/Particle FX/Fire_03.png" id="2_3hawb"]
 [ext_resource type="Texture2D" uid="uid://c2tos1omse0cv" path="res://icon.svg" id="2_prq5w"]
-[ext_resource type="PackedScene" uid="uid://bys6hebroqph3" path="res://src/scenes/components/hurtboxComponent.tscn" id="3_3hawb"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/hurtboxComponent.tscn" id="3_3hawb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3hawb"]
 atlas = ExtResource("2_3hawb")
@@ -110,6 +110,8 @@ script = ExtResource("1_t34b3")
 sprite_frames = SubResource("SpriteFrames_p0dpw")
 
 [node name="HurtboxComponent" parent="." unique_id=751094630 instance=ExtResource("3_3hawb")]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1541749183]
 shape = SubResource("CircleShape2D_w73ag")
