@@ -26,9 +26,9 @@ func _process(delta: float) -> void:
 
 	direction = global_position.direction_to(players[0].global_position)
 	if ((global_position - players[0].global_position).length() > attack_range):
-		emit_signal("move", direction * speed * delta)
+		emit_signal("move", direction * speed)
 	else:
-		emit_signal("move", direction * delta)
+		emit_signal("move", direction)
 
 func _on_attack_timer_timeout():
 	attack1.emit()
