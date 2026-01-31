@@ -1,16 +1,16 @@
 class_name CharacterBase
 extends Node2D
 
-@export var controller : Node
-@export var attack1: Attack
-@export var attack2: Attack
+var controller : Node
+var health: HealthComponent
+var death: DeathComponent
+
+var attack1: Attack
+var attack2: Attack
 var special: Attack
 var shield
 
 var direction: Vector2
-
-var health: HealthComponent
-var death: DeathComponent
 
 
 func _ready() -> void:
@@ -19,8 +19,6 @@ func _ready() -> void:
 	controller = get_node_or_null("CharController")
 	if (controller != null):
 		controller.move.connect(_on_controller_move)
-	
-	controller.attack1.connect(_on_attack1)
 	
 	health = get_node_or_null("HealthComponent")
 	if (health is HealthComponent):
@@ -32,7 +30,7 @@ func _ready() -> void:
 	
 	attack1 = get_node_or_null("Attack1")
 	if (attack1 is Attack):
-		controller.attack2.connect(_on_attack1)
+		controller.attack1.connect(_on_attack1)
 	
 	attack2 = get_node_or_null("Attack2")
 	if (attack2 is Attack):
