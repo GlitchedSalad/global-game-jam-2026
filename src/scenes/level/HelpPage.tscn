@@ -20,106 +20,127 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.18112504, 0.04616783, 0.056843445, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=2121546966]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1361788278]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_4dqod")
 
-[node name="Title" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=299840293]
-layout_mode = 2
+[node name="Title" type="Label" parent="CanvasLayer/Control" unique_id=299840293]
+layout_mode = 0
+offset_left = -696.0
+offset_top = -343.0
+offset_right = 736.0
+offset_bottom = -273.0
 theme = ExtResource("2_4dqod")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 80
 text = "How to Play:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Description" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=507065294]
-layout_mode = 2
+[node name="Description" type="Label" parent="CanvasLayer/Control" unique_id=507065294]
+layout_mode = 0
+offset_left = -696.0
+offset_top = -242.0
+offset_right = 736.0
+offset_bottom = -186.0
 theme = ExtResource("2_4dqod")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "Use WASD to move around, use arrow keys to use abilities"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=2056428759]
-layout_mode = 2
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=2056428759]
+layout_mode = 0
+offset_left = -668.0
+offset_top = -154.0
+offset_right = 708.0
+offset_bottom = 290.0
 size_flags_horizontal = 4
 theme = ExtResource("2_4dqod")
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=458398864]
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer2" unique_id=458398864]
 layout_mode = 2
 theme = ExtResource("2_4dqod")
 theme_override_font_sizes/font_size = 32
 text = "Enemies"
 
-[node name="Melee" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=2044556059]
+[node name="Melee" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer2" unique_id=2044556059]
 layout_mode = 2
 theme = ExtResource("2_4dqod")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/VBoxContainer/Melee" unique_id=324111951]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer2/Melee" unique_id=324111951]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("2_4dqod")
 texture = ExtResource("2_bp8wb")
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Melee" unique_id=894352945]
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer2/Melee" unique_id=894352945]
 layout_mode = 2
 theme = ExtResource("2_4dqod")
 text = "Melee enemies attack you on contact and block your movement"
 
-[node name="Ranged" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=795900263]
+[node name="Ranged" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer2" unique_id=795900263]
 layout_mode = 2
 theme = ExtResource("2_4dqod")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/VBoxContainer/Ranged" unique_id=2075040881]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer2/Ranged" unique_id=2075040881]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("2_4dqod")
 texture = ExtResource("3_4dqod")
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Ranged" unique_id=151873505]
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer2/Ranged" unique_id=151873505]
 layout_mode = 2
 theme = ExtResource("2_4dqod")
 text = "Ranged enemies shoot you from range"
 
-[node name="Exploding" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=411133327]
+[node name="Exploding" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer2" unique_id=411133327]
 layout_mode = 2
 theme = ExtResource("2_4dqod")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/VBoxContainer/Exploding" unique_id=1945750232]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer2/Exploding" unique_id=1945750232]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("2_4dqod")
 texture = ExtResource("4_eypjx")
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Exploding" unique_id=901527905]
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer2/Exploding" unique_id=901527905]
 layout_mode = 2
 theme = ExtResource("2_4dqod")
 text = "Exploding enemies explode when killed"
 
-[node name="Tank" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=1095204338]
+[node name="Tank" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer2" unique_id=1095204338]
 layout_mode = 2
 theme = ExtResource("2_4dqod")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/VBoxContainer/Tank" unique_id=1227631092]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer2/Tank" unique_id=1227631092]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("2_4dqod")
 texture = ExtResource("5_a17ux")
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/VBoxContainer/Tank" unique_id=762818878]
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer2/Tank" unique_id=762818878]
 layout_mode = 2
 theme = ExtResource("2_4dqod")
 text = "Tank enemies have special attacks and a lot of health"
 
-[node name="PlayButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=216712988]
-layout_mode = 2
-size_flags_horizontal = 4
+[node name="PlayButton" type="Button" parent="CanvasLayer/Control" unique_id=216712988]
+layout_mode = 0
+offset_left = -118.0
+offset_top = 352.0
+offset_right = 164.0
+offset_bottom = 455.0
 theme = ExtResource("2_4dqod")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 112
 text = "Play"
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PlayButton" to="." method="_on_play_button_pressed"]
