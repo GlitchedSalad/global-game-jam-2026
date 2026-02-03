@@ -4,14 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://bqv7bi33vhg54" path="res://src/scenes/components/healthBarComponent.tscn" id="2_7n545"]
 [ext_resource type="Script" uid="uid://bdguto2ugo48l" path="res://src/scripts/components/masks/mask_base.gd" id="2_l51fx"]
 [ext_resource type="PackedScene" path="res://src/scenes/components/healthComponent.tscn" id="3_hon5w"]
-[ext_resource type="PackedScene" uid="uid://ctqv67h2ts1qf" path="res://src/scenes/entities/attacks/mask generic attack.tscn" id="3_lf6sb"]
+[ext_resource type="PackedScene" path="res://src/scenes/entities/attacks/mask generic attack.tscn" id="3_lf6sb"]
 [ext_resource type="PackedScene" uid="uid://befu18jlyojfb" path="res://src/scenes/components/hitboxComponent.tscn" id="4_66fhx"]
 [ext_resource type="PackedScene" uid="uid://bbpjtemgku5av" path="res://src/scenes/components/player_controller.tscn" id="5_8voux"]
-[ext_resource type="PackedScene" uid="uid://c1uypvlfpwaef" path="res://src/scenes/components/shield_roll.tscn" id="6_l51fx"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/shield_roll.tscn" id="6_l51fx"]
 [ext_resource type="PackedScene" uid="uid://hk2c87ramnko" path="res://src/scenes/entities/attacks/fireballAttack.tscn" id="7_lf6sb"]
 [ext_resource type="PackedScene" uid="uid://cq1u650n0o22j" path="res://src/scenes/entities/attacks/multiFireballAttack.tscn" id="8_66fhx"]
 [ext_resource type="Texture2D" uid="uid://dlth7b56uyqwj" path="res://src/assets/temp_art/tile_0085.png" id="9_66fhx"]
 [ext_resource type="PackedScene" uid="uid://2fb1k7sjbmm5" path="res://src/scenes/components/magnet.tscn" id="10_8voux"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/playerDeathComponent.tscn" id="13_b7ylj"]
 
 [sub_resource type="Resource" id="Resource_l51fx"]
 script = ExtResource("2_l51fx")
@@ -44,7 +45,8 @@ health_component = NodePath("../HealthComponent")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=801698190]
 shape = SubResource("CircleShape2D_hon5w")
 
-[node name="CharController" parent="." unique_id=823443357 instance=ExtResource("5_8voux")]
+[node name="CharController" parent="." unique_id=823443357 node_paths=PackedStringArray("death_component") instance=ExtResource("5_8voux")]
+death_component = NodePath("../DeathComponent")
 
 [node name="Shield" parent="." unique_id=966327072 instance=ExtResource("6_l51fx")]
 
@@ -58,3 +60,5 @@ scale = Vector2(5, 5)
 texture = ExtResource("9_66fhx")
 
 [node name="Area2D" parent="." unique_id=666968627 instance=ExtResource("10_8voux")]
+
+[node name="DeathComponent" parent="." unique_id=1371335719 instance=ExtResource("13_b7ylj")]

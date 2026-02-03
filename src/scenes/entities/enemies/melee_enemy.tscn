@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dddji48kx5pfx" path="res://src/scripts/entities/character_base.gd" id="1_a2hju"]
 [ext_resource type="Texture2D" uid="uid://drlxy23yxwhv3" path="res://src/assets/temp_art/tile_0122.png" id="2_u62bl"]
 [ext_resource type="PackedScene" uid="uid://bd7qh1svr4ggi" path="res://src/scenes/entities/attacks/whackAttack.tscn" id="4_u62bl"]
-[ext_resource type="PackedScene" uid="uid://bjf0ikgfprwt7" path="res://src/scenes/components/healthComponent.tscn" id="5_s0pi5"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/healthComponent.tscn" id="5_s0pi5"]
 [ext_resource type="PackedScene" uid="uid://bqv7bi33vhg54" path="res://src/scenes/components/healthBarComponent.tscn" id="6_1r8ib"]
 [ext_resource type="PackedScene" uid="uid://cnjjrpxub3wog" path="res://src/scenes/components/simple_enemy_controller.tscn" id="6_2a5gd"]
 [ext_resource type="PackedScene" uid="uid://befu18jlyojfb" path="res://src/scenes/components/hitboxComponent.tscn" id="7_5cxla"]
@@ -41,4 +41,5 @@ health_component = NodePath("../HealthComponent")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1664946553]
 shape = SubResource("CircleShape2D_kcb5j")
 
-[node name="DeathComponent" parent="." unique_id=1782825441 instance=ExtResource("8_2a5gd")]
+[node name="DeathComponent" parent="." unique_id=1782825441 node_paths=PackedStringArray("hitbox") instance=ExtResource("8_2a5gd")]
+hitbox = NodePath("../HitboxComponent")

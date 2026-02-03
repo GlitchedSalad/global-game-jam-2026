@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://burlmjk5e0us"]
+[gd_scene format=3 uid="uid://ddu4we1jy4d75"]
 
 [ext_resource type="Script" uid="uid://dddji48kx5pfx" path="res://src/scripts/entities/character_base.gd" id="1_uyfks"]
 [ext_resource type="Texture2D" uid="uid://g5ttefk6e3kx" path="res://src/assets/temp_art/tile_0110.png" id="2_v5cxi"]
-[ext_resource type="PackedScene" uid="uid://c2ejhhm62dbxf" path="res://src/scenes/components/explodingEnemyController.tscn" id="3_v5cxi"]
-[ext_resource type="PackedScene" uid="uid://bjf0ikgfprwt7" path="res://src/scenes/components/healthComponent.tscn" id="4_prxqp"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/explodingEnemyController.tscn" id="3_v5cxi"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/healthComponent.tscn" id="4_prxqp"]
 [ext_resource type="PackedScene" uid="uid://befu18jlyojfb" path="res://src/scenes/components/hitboxComponent.tscn" id="5_awsou"]
 [ext_resource type="PackedScene" uid="uid://bqv7bi33vhg54" path="res://src/scenes/components/healthBarComponent.tscn" id="6_dbo8a"]
-[ext_resource type="PackedScene" uid="uid://3ev1gw0ospy2" path="res://src/scenes/components/explodingDeathComponent.tscn" id="7_awsou"]
-[ext_resource type="PackedScene" uid="uid://cieitkovojmwj" path="res://src/scenes/entities/attacks/deathExplosion.tscn" id="8_dbo8a"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/explodingDeathComponent.tscn" id="7_awsou"]
+[ext_resource type="PackedScene" path="res://src/scenes/entities/attacks/deathExplosion.tscn" id="8_dbo8a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ndbrd"]
 radius = 40.012497
@@ -16,6 +16,7 @@ radius = 40.012497
 radius = 40.012497
 
 [node name="ExplodingEnemy" type="CharacterBody2D" unique_id=1919042887]
+motion_mode = 1
 script = ExtResource("1_uyfks")
 metadata/_custom_type_script = "uid://dddji48kx5pfx"
 

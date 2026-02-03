@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dctiqi8vrmlxg" path="res://src/assets/temp_art/tile_0084.png" id="2_1w4gr"]
 [ext_resource type="PackedScene" uid="uid://hk2c87ramnko" path="res://src/scenes/entities/attacks/fireballAttack.tscn" id="3_13sxj"]
 [ext_resource type="PackedScene" uid="uid://d2gum0xjqtefg" path="res://src/scenes/components/simple_ranged_enemy_controller.tscn" id="6_yefal"]
-[ext_resource type="PackedScene" uid="uid://bjf0ikgfprwt7" path="res://src/scenes/components/healthComponent.tscn" id="7_xbd8t"]
+[ext_resource type="PackedScene" path="res://src/scenes/components/healthComponent.tscn" id="7_xbd8t"]
 [ext_resource type="PackedScene" uid="uid://b8o8cp57cfmr7" path="res://src/scenes/components/simpleEnemyDeathComponent.tscn" id="8_13sxj"]
 [ext_resource type="PackedScene" uid="uid://bqv7bi33vhg54" path="res://src/scenes/components/healthBarComponent.tscn" id="8_mbj6v"]
 [ext_resource type="PackedScene" uid="uid://befu18jlyojfb" path="res://src/scenes/components/hitboxComponent.tscn" id="9_yefal"]
@@ -42,5 +42,6 @@ shape = SubResource("RectangleShape2D_5bmaf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=609161959]
 shape = SubResource("CircleShape2D_1w4gr")
 
-[node name="DeathComponent" parent="." unique_id=1782825441 instance=ExtResource("8_13sxj")]
+[node name="DeathComponent" parent="." unique_id=1782825441 node_paths=PackedStringArray("hitbox") instance=ExtResource("8_13sxj")]
 xp = 20
+hitbox = NodePath("../HitboxComponent")
